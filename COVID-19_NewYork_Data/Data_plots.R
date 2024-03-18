@@ -5,7 +5,7 @@ library(data.table)
 library(ggplot2)
 
 #Type getwd() to the Console to get the address
-setwd("G:/Drive'ım/Preprint/InfectDiseases/COVID-19_NewYork_Data")
+setwd("G:/Drive'??m/Preprint/InfectDiseases/COVID-19_NewYork_Data")
 # To import this datafile 
 datafull <- read.csv(file = 'COVID-19_Daily_Counts_of_Cases__Hospitalizations__and_Deaths.csv')
 str(datafull)
@@ -40,10 +40,10 @@ data_Death <- fread("COVID-19_Daily_Counts_of_Cases__Hospitalizations__and_Death
                                select = c("date_of_interest", "DEATH_COUNT"))
 data_Death = head(data_Death,length_data_file)
 
-write.csv(as.data.frame(data_dates),"G:/Drive'ım/Preprint/InfectDiseases/COVID-19_NewYork_Data/Dates.csv")
-write.csv(as.data.frame(data_Cases),"G:/Drive'ım/Preprint/InfectDiseases/COVID-19_NewYork_Data/Cases.csv")
-write.csv(as.data.frame(data_Hosp),"G:/Drive'ım/Preprint/InfectDiseases/COVID-19_NewYork_Data/Hosp.csv")
-write.csv(as.data.frame(data_Death),"G:/Drive'ım/Preprint/InfectDiseases/COVID-19_NewYork_Data/Death.csv")
+write.csv(as.data.frame(data_dates),"G:/Drive'D1m/Preprint/InfectDiseases/COVID-19_NewYork_Data/Dates.csv")
+write.csv(as.data.frame(data_Cases),"G:/Drive'D1m/Preprint/InfectDiseases/COVID-19_NewYork_Data/Cases.csv")
+write.csv(as.data.frame(data_Hosp),"G:/Drive'D1m/Preprint/InfectDiseases/COVID-19_NewYork_Data/Hosp.csv")
+write.csv(as.data.frame(data_Death),"G:/Drive'D1m/Preprint/InfectDiseases/COVID-19_NewYork_Data/Death.csv")
 
 
 # Plots
