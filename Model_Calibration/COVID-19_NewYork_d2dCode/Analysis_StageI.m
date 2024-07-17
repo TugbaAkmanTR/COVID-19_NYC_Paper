@@ -2,9 +2,6 @@
 
 close all; clear all; clc;
 
-diary('diary_main_model_fitting_StageI.txt')
-diary on
-
 set(0, 'defaultaxesfontsize',16)
 
 % initialize the model
@@ -12,10 +9,6 @@ Setup_StageI
 
 %% Optimization
 arSimu(true,true,true);
-
-%arPlot
-
-%return
 
 n_fit = 1000; % number of starts
 
@@ -27,19 +20,12 @@ end
 
 % Print optimization results
 arPrint;     % display parameter values
-% arPlotChi2s; % waterfall plot
 arSimu(true,true,true);
 
-% pause
 % %Profile likelihood
 % arPLEInit
 % ple
 
-%%
-%[AIC, BIC] = statmeasure(loglikelihood,length(ar.p),ar.ndata)
-
-%Best results
-% arLoad('20240422T214344_model_fitting_StageI')
 
 arPlot
 
@@ -175,11 +161,3 @@ fig.PaperSize = [fig_pos(3) fig_pos(4)];
 saveas(fig,'Deaths','eps')
 saveas(fig,'Deaths','fig')
 
-% To save
-arSave('model_fitting_StageI')
-
-diary off
-%%
-destination = '/Examples/COVID-19_NewYork_d2dCode/Figures/DataFitting';
-ext = {'fig'};
-saveallfigs(destination)
