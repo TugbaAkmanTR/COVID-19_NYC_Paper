@@ -1,0 +1,34 @@
+close all; clc; clear;
+
+%% initialize model
+arInit;
+arLoadModel('main_model_fitting_StageI');
+%arLoadModel('main_model_fitting_StageI_without_fixing_param');
+arLoadData('data_Cases_StageI');
+arLoadData('data_Death_StageI');
+arLoadData('data_Hosp_StageI');
+arCompileAll;
+
+
+%% Constraint parameters
+ar.lb = -9*ones(size(ar.lb)); % lower parameter bounds
+ar.ub = 5*ones(size(ar.ub)); % upper parameter bounds
+%ar.lb(6) = 0*ones(size(ar.lb(6))); % lower parameter bounds for E0, In0, Is0
+%ar.ub(6) = 0*ones(size(ar.ub(6))); % lower parameter bounds for E0, In0, Is0
+%ar.lb(5:6) = 0*ones(size(ar.lb(5:6))); % lower parameter bounds for gammah, gammas
+%ar.ub(5:6) = 0*ones(size(ar.lb(5:6))); % lower parameter bounds for  gammah, gammas
+%ar.ub(1:2) = 0*ones(size(ar.lb(1:2))); % lower parameter bounds for  gammah, gammas
+
+% set parameters for parameter estimation and optimization
+ar.config.atol = 1e-8;
+ar.config.rtol = 1e-8;
+ar.config.optim.TolFun = 1e-8;
+ar.config.optim.TolX = 1e-8;
+ar.config.maxsteps = 1e5;
+
+%% Numerical settings
+
+% Optimizer settings
+ar.config.optim.PrecondBandWidth = inf;
+ar.config.optim.Display          = 'iter';
+ar.config.optim.MaxIter          = 1e4;
