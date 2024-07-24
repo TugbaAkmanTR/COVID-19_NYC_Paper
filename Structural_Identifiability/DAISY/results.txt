@@ -1,0 +1,1058 @@
+Reduce (Free CSL version, revision 4859), 19-Jan-19 ...
+
+1: LOAD DAISY$
+04`;00DAISY VERSION 2.0  04/01/2019 \mathrm{DAISY~VERSION~2.0~~04/01/2019}
+04PK00COPYRIGHT UNIVERSITY OF CAGLIARI AND UNIVERSITY OF PADOVA \mathrm{COPYRIGHT~UNIVERSITY~OF~CAGLIARI~AND~UNIVERSITY~OF~PADOVA}
+04hl00 Authors: G. Bellu, M.P. Saccomani, S. Audoly and L. D'Angio'  \mathrm{~Authors:~G.~Bellu,~M.P.~Saccomani,~S.~Audoly~and~L.~D'Angio'~}
+
+2: IN "C:\Users\pc_tugba\Documents\daisy_windows_v2.0\Models\results.txt"$
+03HD10A Corono Virus MODEL OF 7 STATE VARIABLES WITH KNOWN INITIAL CONDITIONS \mathrm{A~Corono~Virus~MODEL~OF~7~STATE~VARIABLES~WITH~KNOWN~INITIAL~CONDITIONS}
+
+MODEL EQUATION(S)
+
+
+c_ := {df(x2,t)=( - (((x4 + x6 + x3)*rho - int_y1 + c1*rho)*x2 + 14*(int_y1 + rho*x2 - c1*rho)*betas*x4) - 14*
+(int_y1 + rho*x2 - c1*rho)*(x2 + x3)*betae)/(14*((x4 + x6 + x3)*rho - int_y1) + 14*c1*rho),
+df(x3,t)=(x2 - 2*x3 - rho*x2)/14,
+df(x4,t)=(50*rho*x2 + 700*thetaa*x4*x5 - 2939321*thetaa*x4 + 700*int_y3*phi*thetaa*x4 - 700*c2*thetaa*x4)/700,
+df(x5,t)= - ((x5 - 4199)*thetaa*x4 + nu*x5 + int_y3*phi*thetaa*x4 + gammah*x5) + c2*thetaa*x4,
+df(x6,t)=(100*x3 + 21*x4 + 700*gammah*x5)/700,
+df(int_y1,t)=(rho*x2)/14,
+df(int_y3,t)=x5,
+y1=(rho*x2)/14,
+y2=nu,
+y3=x5,
+y4=int_y1,
+y5=int_y3}
+
+
+CHARACTERISTIC SET
+
+
+aa_(1) := y2 - nu
+
+
+aa_(2) := df(y4,t) - y1
+
+
+aa_(3) := df(y5,t) - y3
+
+
+aa_(4) :=  - 100*df(y3,t,2)*y3 - 100*df(y3,t,2)*y5*phi + 100*df(y3,t,2)*(c2 + 4199) + 100*df(y3,t)**2 + 100*df
+(y3,t)*y3**2*thetaa + 200*df(y3,t)*y3*y5*phi*thetaa + df(y3,t)*y3*( - 200*c2*thetaa + 100*phi - 839803*thetaa)
+ + 100*df(y3,t)*y5**2*phi**2*thetaa + df(y3,t)*y5*phi*( - 200*c2*thetaa - 100*gammah - 100*nu - 839803*thetaa)
+ + df(y3,t)*(100*c2**2*thetaa + 100*c2*gammah + 100*c2*nu + 839803*c2*thetaa + 419900*gammah + 419900*nu + 
+1763172697*thetaa) - 100*y1*y3**2*thetaa - 200*y1*y3*y5*phi*thetaa + 200*y1*y3*thetaa*(c2 + 4199) - 100*y1*y5
+**2*phi**2*thetaa + 200*y1*y5*phi*thetaa*(c2 + 4199) + 100*y1*thetaa*( - c2**2 - 8398*c2 - 17631601) + 100*y3
+**3*thetaa*(gammah + nu) + 200*y3**2*y5*phi*thetaa*(gammah + nu) + y3**2*( - 200*c2*gammah*thetaa - 200*c2*nu*
+thetaa + 100*gammah*phi - 839803*gammah*thetaa + 100*nu*phi - 839803*nu*thetaa) + 100*y3*y5**2*phi**2*thetaa*(
+gammah + nu) + y3*y5*phi*thetaa*( - 200*c2*gammah - 200*c2*nu - 839803*gammah - 839803*nu) + y3*thetaa*(100*c2
+**2*gammah + 100*c2**2*nu + 839803*c2*gammah + 839803*c2*nu + 1763172697*gammah + 1763172697*nu)
+
+
+aa_(5) :=  - 1344560000*df(y1,t,3)*df(y1,t)*df(y3,t)*y1*y3*rho*thetaa - 1344560000*df(y1,t,3)*df(y1,t)*df(y3,t
+)*y1*y5*phi*rho*thetaa + 13445600*df(y1,t,3)*df(y1,t)*df(y3,t)*y1*rho*(100*c2*thetaa + 419903*thetaa - 3) - 
+96040000*df(y1,t,3)*df(y1,t)*df(y3,t)*y3*y4*rho*thetaa + 96040000*df(y1,t,3)*df(y1,t)*df(y3,t)*y3*c1*rho**2*
+thetaa - 96040000*df(y1,t,3)*df(y1,t)*df(y3,t)*y4*y5*phi*rho*thetaa + 960400*df(y1,t,3)*df(y1,t)*df(y3,t)*y4*
+rho*(100*c2*thetaa + 419903*thetaa - 3) + 96040000*df(y1,t,3)*df(y1,t)*df(y3,t)*y5*c1*phi*rho**2*thetaa + 
+960400*df(y1,t,3)*df(y1,t)*df(y3,t)*c1*rho**2*( - 100*c2*thetaa - 419903*thetaa + 3) + 18823840000*df(y1,t,3)*
+df(y1,t)*y1**2*y3*betae*thetaa + 18823840000*df(y1,t,3)*df(y1,t)*y1**2*y5*betae*phi*thetaa + 18823840000*df(y1
+,t,3)*df(y1,t)*y1**2*betae*thetaa*( - c2 - 4199) - 1344560000*df(y1,t,3)*df(y1,t)*y1*y3**2*nu*rho*thetaa + 
+2689120000*df(y1,t,3)*df(y1,t)*y1*y3*y4*betae*thetaa - 1344560000*df(y1,t,3)*df(y1,t)*y1*y3*y5*nu*phi*rho*
+thetaa + 13445600*df(y1,t,3)*df(y1,t)*y1*y3*rho*( - 200*betae*c1*thetaa + 100*c2*nu*thetaa + 3*gammah*thetaa -
+ 3*gammah + 419903*nu*thetaa - 3*nu) + 2689120000*df(y1,t,3)*df(y1,t)*y1*y4*y5*betae*phi*thetaa + 2689120000*
+df(y1,t,3)*df(y1,t)*y1*y4*betae*thetaa*( - c2 - 4199) - 2689120000*df(y1,t,3)*df(y1,t)*y1*y5*betae*c1*phi*rho*
+thetaa + 2689120000*df(y1,t,3)*df(y1,t)*y1*betae*c1*rho*thetaa*(c2 + 4199) - 96040000*df(y1,t,3)*df(y1,t)*y3**
+2*y4*nu*rho*thetaa + 96040000*df(y1,t,3)*df(y1,t)*y3**2*c1*nu*rho**2*thetaa + 96040000*df(y1,t,3)*df(y1,t)*y3*
+y4**2*betae*thetaa - 96040000*df(y1,t,3)*df(y1,t)*y3*y4*y5*nu*phi*rho*thetaa + 960400*df(y1,t,3)*df(y1,t)*y3*
+y4*rho*( - 200*betae*c1*thetaa + 100*c2*nu*thetaa + 3*gammah*thetaa - 3*gammah + 419903*nu*thetaa - 3*nu) + 
+96040000*df(y1,t,3)*df(y1,t)*y3*y5*c1*nu*phi*rho**2*thetaa + 960400*df(y1,t,3)*df(y1,t)*y3*c1*rho**2*(100*
+betae*c1*thetaa - 100*c2*nu*thetaa - 3*gammah*thetaa + 3*gammah - 419903*nu*thetaa + 3*nu) + 96040000*df(y1,t,
+3)*df(y1,t)*y4**2*y5*betae*phi*thetaa + 96040000*df(y1,t,3)*df(y1,t)*y4**2*betae*thetaa*( - c2 - 4199) - 
+192080000*df(y1,t,3)*df(y1,t)*y4*y5*betae*c1*phi*rho*thetaa + 192080000*df(y1,t,3)*df(y1,t)*y4*betae*c1*rho*
+thetaa*(c2 + 4199) + 96040000*df(y1,t,3)*df(y1,t)*y5*betae*c1**2*phi*rho**2*thetaa + 96040000*df(y1,t,3)*df(y1
+,t)*betae*c1**2*rho**2*thetaa*( - c2 - 4199) + 96040000*df(y1,t,3)*df(y3,t)*y1**2*y3*rho*thetaa*( - 14*betas -
+ 1) + 96040000*df(y1,t,3)*df(y3,t)*y1**2*y5*phi*rho*thetaa*( - 14*betas - 1) + 960400*df(y1,t,3)*df(y3,t)*y1**
+2*rho*(1400*betas*c2*thetaa + 5878642*betas*thetaa - 200*betas + 100*c2*thetaa + 419903*thetaa - 3) + 6860000*
+df(y1,t,3)*df(y3,t)*y1*y3*y4*rho*thetaa*( - 28*betas - 1) + 6860000*df(y1,t,3)*df(y3,t)*y1*y3*c1*rho**2*thetaa
+*(28*betas + 1) + 6860000*df(y1,t,3)*df(y3,t)*y1*y4*y5*phi*rho*thetaa*( - 28*betas - 1) + 68600*df(y1,t,3)*df(
+y3,t)*y1*y4*rho*(2800*betas*c2*thetaa + 11757284*betas*thetaa - 400*betas + 100*c2*thetaa + 419903*thetaa - 3)
+ + 6860000*df(y1,t,3)*df(y3,t)*y1*y5*c1*phi*rho**2*thetaa*(28*betas + 1) + 68600*df(y1,t,3)*df(y3,t)*y1*c1*rho
+**2*( - 2800*betas*c2*thetaa - 11757284*betas*thetaa + 400*betas - 100*c2*thetaa - 419903*thetaa + 3) - 
+6860000*df(y1,t,3)*df(y3,t)*y3*y4**2*betas*rho*thetaa + 13720000*df(y1,t,3)*df(y3,t)*y3*y4*betas*c1*rho**2*
+thetaa - 6860000*df(y1,t,3)*df(y3,t)*y3*betas*c1**2*rho**3*thetaa - 6860000*df(y1,t,3)*df(y3,t)*y4**2*y5*betas
+*phi*rho*thetaa + 9800*df(y1,t,3)*df(y3,t)*y4**2*betas*rho*(700*c2*thetaa + 2939321*thetaa - 100) + 13720000*
+df(y1,t,3)*df(y3,t)*y4*y5*betas*c1*phi*rho**2*thetaa + 19600*df(y1,t,3)*df(y3,t)*y4*betas*c1*rho**2*( - 700*c2
+*thetaa - 2939321*thetaa + 100) - 6860000*df(y1,t,3)*df(y3,t)*y5*betas*c1**2*phi*rho**3*thetaa + 9800*df(y1,t,
+3)*df(y3,t)*betas*c1**2*rho**3*(700*c2*thetaa + 2939321*thetaa - 100) + 1344560000*df(y1,t,3)*y1**3*y3*thetaa*
+( - betae*rho + 3*betae + betas*rho) + 1344560000*df(y1,t,3)*y1**3*y5*phi*thetaa*( - betae*rho + 3*betae + 
+betas*rho) + 1344560000*df(y1,t,3)*y1**3*thetaa*(betae*c2*rho - 3*betae*c2 + 4199*betae*rho - 12597*betae - 
+betas*c2*rho - 4199*betas*rho) + 96040000*df(y1,t,3)*y1**2*y3**2*rho*thetaa*( - 14*betas*gammah - 14*betas*nu 
+- nu) + 192080000*df(y1,t,3)*y1**2*y3*y4*thetaa*( - betae*rho + 3*betae + betas*rho) + 96040000*df(y1,t,3)*y1
+**2*y3*y5*phi*rho*thetaa*( - 14*betas*gammah - 14*betas*nu - nu) + 960400*df(y1,t,3)*y1**2*y3*rho*(200*betae*
+c1*rho*thetaa - 600*betae*c1*thetaa - 200*betas*c1*rho*thetaa + 1400*betas*c2*gammah*thetaa + 1400*betas*c2*nu
+*thetaa + 5878642*betas*gammah*thetaa - 200*betas*gammah + 5878642*betas*nu*thetaa - 200*betas*nu + 100*c2*nu*
+thetaa + 3*gammah*thetaa - 3*gammah + 419903*nu*thetaa - 3*nu) + 192080000*df(y1,t,3)*y1**2*y4*y5*phi*thetaa*(
+ - betae*rho + 3*betae + betas*rho) + 192080000*df(y1,t,3)*y1**2*y4*thetaa*(betae*c2*rho - 3*betae*c2 + 4199*
+betae*rho - 12597*betae - betas*c2*rho - 4199*betas*rho) + 192080000*df(y1,t,3)*y1**2*y5*c1*phi*rho*thetaa*(
+betae*rho - 3*betae - betas*rho) + 192080000*df(y1,t,3)*y1**2*c1*rho*thetaa*( - betae*c2*rho + 3*betae*c2 - 
+4199*betae*rho + 12597*betae + betas*c2*rho + 4199*betas*rho) + 6860000*df(y1,t,3)*y1*y3**2*y4*rho*thetaa*( - 
+28*betas*gammah - 28*betas*nu - nu) + 6860000*df(y1,t,3)*y1*y3**2*c1*rho**2*thetaa*(28*betas*gammah + 28*betas
+*nu + nu) + 6860000*df(y1,t,3)*y1*y3*y4**2*thetaa*( - betae*rho + 3*betae + betas*rho) + 6860000*df(y1,t,3)*y1
+*y3*y4*y5*phi*rho*thetaa*( - 28*betas*gammah - 28*betas*nu - nu) + 68600*df(y1,t,3)*y1*y3*y4*rho*(200*betae*c1
+*rho*thetaa - 600*betae*c1*thetaa - 200*betas*c1*rho*thetaa + 2800*betas*c2*gammah*thetaa + 2800*betas*c2*nu*
+thetaa + 11757284*betas*gammah*thetaa - 400*betas*gammah + 11757284*betas*nu*thetaa - 400*betas*nu + 100*c2*nu
+*thetaa + 3*gammah*thetaa - 3*gammah + 419903*nu*thetaa - 3*nu) + 6860000*df(y1,t,3)*y1*y3*y5*c1*phi*rho**2*
+thetaa*(28*betas*gammah + 28*betas*nu + nu) + 68600*df(y1,t,3)*y1*y3*c1*rho**2*( - 100*betae*c1*rho*thetaa + 
+300*betae*c1*thetaa + 100*betas*c1*rho*thetaa - 2800*betas*c2*gammah*thetaa - 2800*betas*c2*nu*thetaa - 
+11757284*betas*gammah*thetaa + 400*betas*gammah - 11757284*betas*nu*thetaa + 400*betas*nu - 100*c2*nu*thetaa -
+ 3*gammah*thetaa + 3*gammah - 419903*nu*thetaa + 3*nu) + 6860000*df(y1,t,3)*y1*y4**2*y5*phi*thetaa*( - betae*
+rho + 3*betae + betas*rho) + 6860000*df(y1,t,3)*y1*y4**2*thetaa*(betae*c2*rho - 3*betae*c2 + 4199*betae*rho - 
+12597*betae - betas*c2*rho - 4199*betas*rho) + 13720000*df(y1,t,3)*y1*y4*y5*c1*phi*rho*thetaa*(betae*rho - 3*
+betae - betas*rho) + 13720000*df(y1,t,3)*y1*y4*c1*rho*thetaa*( - betae*c2*rho + 3*betae*c2 - 4199*betae*rho + 
+12597*betae + betas*c2*rho + 4199*betas*rho) + 6860000*df(y1,t,3)*y1*y5*c1**2*phi*rho**2*thetaa*( - betae*rho 
++ 3*betae + betas*rho) + 6860000*df(y1,t,3)*y1*c1**2*rho**2*thetaa*(betae*c2*rho - 3*betae*c2 + 4199*betae*rho
+ - 12597*betae - betas*c2*rho - 4199*betas*rho) - 6860000*df(y1,t,3)*y3**2*y4**2*betas*rho*thetaa*(gammah + nu
+) + 13720000*df(y1,t,3)*y3**2*y4*betas*c1*rho**2*thetaa*(gammah + nu) - 6860000*df(y1,t,3)*y3**2*betas*c1**2*
+rho**3*thetaa*(gammah + nu) - 6860000*df(y1,t,3)*y3*y4**2*y5*betas*phi*rho*thetaa*(gammah + nu) + 9800*df(y1,t
+,3)*y3*y4**2*betas*rho*(700*c2*gammah*thetaa + 700*c2*nu*thetaa + 2939321*gammah*thetaa - 100*gammah + 2939321
+*nu*thetaa - 100*nu) + 13720000*df(y1,t,3)*y3*y4*y5*betas*c1*phi*rho**2*thetaa*(gammah + nu) + 19600*df(y1,t,3
+)*y3*y4*betas*c1*rho**2*( - 700*c2*gammah*thetaa - 700*c2*nu*thetaa - 2939321*gammah*thetaa + 100*gammah - 
+2939321*nu*thetaa + 100*nu) - 6860000*df(y1,t,3)*y3*y5*betas*c1**2*phi*rho**3*thetaa*(gammah + nu) + 9800*df(
+y1,t,3)*y3*betas*c1**2*rho**3*(700*c2*gammah*thetaa + 700*c2*nu*thetaa + 2939321*gammah*thetaa - 100*gammah + 
+2939321*nu*thetaa - 100*nu) + 2689120000*df(y1,t,2)**2*df(y3,t)*y1*y3*rho*thetaa + 2689120000*df(y1,t,2)**2*df
+(y3,t)*y1*y5*phi*rho*thetaa + 26891200*df(y1,t,2)**2*df(y3,t)*y1*rho*( - 100*c2*thetaa - 419903*thetaa + 3) + 
+192080000*df(y1,t,2)**2*df(y3,t)*y3*y4*rho*thetaa - 192080000*df(y1,t,2)**2*df(y3,t)*y3*c1*rho**2*thetaa + 
+192080000*df(y1,t,2)**2*df(y3,t)*y4*y5*phi*rho*thetaa + 1920800*df(y1,t,2)**2*df(y3,t)*y4*rho*( - 100*c2*
+thetaa - 419903*thetaa + 3) - 192080000*df(y1,t,2)**2*df(y3,t)*y5*c1*phi*rho**2*thetaa + 1920800*df(y1,t,2)**2
+*df(y3,t)*c1*rho**2*(100*c2*thetaa + 419903*thetaa - 3) - 18823840000*df(y1,t,2)**2*y1**2*y3*betae*thetaa - 
+18823840000*df(y1,t,2)**2*y1**2*y5*betae*phi*thetaa + 18823840000*df(y1,t,2)**2*y1**2*betae*thetaa*(c2 + 4199)
+ + 2689120000*df(y1,t,2)**2*y1*y3**2*nu*rho*thetaa - 2689120000*df(y1,t,2)**2*y1*y3*y4*betae*thetaa + 
+2689120000*df(y1,t,2)**2*y1*y3*y5*nu*phi*rho*thetaa + 26891200*df(y1,t,2)**2*y1*y3*rho*(100*betae*c1*thetaa - 
+100*c2*nu*thetaa - 3*gammah*thetaa + 3*gammah - 419903*nu*thetaa + 3*nu) - 2689120000*df(y1,t,2)**2*y1*y4*y5*
+betae*phi*thetaa + 2689120000*df(y1,t,2)**2*y1*y4*betae*thetaa*(c2 + 4199) + 2689120000*df(y1,t,2)**2*y1*y5*
+betae*c1*phi*rho*thetaa + 2689120000*df(y1,t,2)**2*y1*betae*c1*rho*thetaa*( - c2 - 4199) + 192080000*df(y1,t,2
+)**2*y3**2*y4*nu*rho*thetaa - 192080000*df(y1,t,2)**2*y3**2*c1*nu*rho**2*thetaa - 96040000*df(y1,t,2)**2*y3*y4
+**2*betae*thetaa + 192080000*df(y1,t,2)**2*y3*y4*y5*nu*phi*rho*thetaa + 1920800*df(y1,t,2)**2*y3*y4*rho*(100*
+betae*c1*thetaa - 100*c2*nu*thetaa - 3*gammah*thetaa + 3*gammah - 419903*nu*thetaa + 3*nu) - 192080000*df(y1,t
+,2)**2*y3*y5*c1*nu*phi*rho**2*thetaa + 1920800*df(y1,t,2)**2*y3*c1*rho**2*( - 50*betae*c1*thetaa + 100*c2*nu*
+thetaa + 3*gammah*thetaa - 3*gammah + 419903*nu*thetaa - 3*nu) - 96040000*df(y1,t,2)**2*y4**2*y5*betae*phi*
+thetaa + 96040000*df(y1,t,2)**2*y4**2*betae*thetaa*(c2 + 4199) + 192080000*df(y1,t,2)**2*y4*y5*betae*c1*phi*
+rho*thetaa + 192080000*df(y1,t,2)**2*y4*betae*c1*rho*thetaa*( - c2 - 4199) - 96040000*df(y1,t,2)**2*y5*betae*
+c1**2*phi*rho**2*thetaa + 96040000*df(y1,t,2)**2*betae*c1**2*rho**2*thetaa*(c2 + 4199) - 1344560000*df(y1,t,2)
+*df(y1,t)**2*df(y3,t)*y3*rho*thetaa - 1344560000*df(y1,t,2)*df(y1,t)**2*df(y3,t)*y5*phi*rho*thetaa + 13445600*
+df(y1,t,2)*df(y1,t)**2*df(y3,t)*rho*(100*c2*thetaa + 419903*thetaa - 3) - 37647680000*df(y1,t,2)*df(y1,t)**2*
+y1*y3*betae*thetaa - 37647680000*df(y1,t,2)*df(y1,t)**2*y1*y5*betae*phi*thetaa + 37647680000*df(y1,t,2)*df(y1,
+t)**2*y1*betae*thetaa*(c2 + 4199) - 1344560000*df(y1,t,2)*df(y1,t)**2*y3**2*nu*rho*thetaa - 2689120000*df(y1,t
+,2)*df(y1,t)**2*y3*y4*betae*thetaa - 1344560000*df(y1,t,2)*df(y1,t)**2*y3*y5*nu*phi*rho*thetaa + 13445600*df(
+y1,t,2)*df(y1,t)**2*y3*rho*(200*betae*c1*thetaa + 100*c2*nu*thetaa + 3*gammah*thetaa - 3*gammah + 419903*nu*
+thetaa - 3*nu) - 2689120000*df(y1,t,2)*df(y1,t)**2*y4*y5*betae*phi*thetaa + 2689120000*df(y1,t,2)*df(y1,t)**2*
+y4*betae*thetaa*(c2 + 4199) + 2689120000*df(y1,t,2)*df(y1,t)**2*y5*betae*c1*phi*rho*thetaa + 2689120000*df(y1,
+t,2)*df(y1,t)**2*betae*c1*rho*thetaa*( - c2 - 4199) + 1344560000*df(y1,t,2)*df(y1,t)*df(y3,t)**2*y1*rho*thetaa
+ + 96040000*df(y1,t,2)*df(y1,t)*df(y3,t)**2*y4*rho*thetaa - 96040000*df(y1,t,2)*df(y1,t)*df(y3,t)**2*c1*rho**2
+*thetaa + 1344560000*df(y1,t,2)*df(y1,t)*df(y3,t)*y1*y3**2*rho*thetaa**2 + 2689120000*df(y1,t,2)*df(y1,t)*df(
+y3,t)*y1*y3*y5*phi*rho*thetaa**2 + 1920800*df(y1,t,2)*df(y1,t)*df(y3,t)*y1*y3*rho*thetaa*(2100*betas - 1400*c2
+*thetaa + 700*nu + 700*phi - 5878642*thetaa + 271) + 1344560000*df(y1,t,2)*df(y1,t)*df(y3,t)*y1*y5**2*phi**2*
+rho*thetaa**2 + 1920800*df(y1,t,2)*df(y1,t)*df(y3,t)*y1*y5*phi*rho*thetaa*(2100*betas - 1400*c2*thetaa - 700*
+gammah - 5878642*thetaa + 271) + 19208*df(y1,t,2)*df(y1,t)*df(y3,t)*y1*rho*( - 210000*betas*c2*thetaa - 
+881796300*betas*thetaa + 30000*betas + 70000*c2**2*thetaa**2 + 70000*c2*gammah*thetaa + 587864200*c2*thetaa**2
+ - 27100*c2*thetaa + 293930000*gammah*thetaa + 1234229705863*thetaa**2 - 113793713*thetaa + 750) + 96040000*df
+(y1,t,2)*df(y1,t)*df(y3,t)*y3**2*y4*rho*thetaa**2 - 96040000*df(y1,t,2)*df(y1,t)*df(y3,t)*y3**2*c1*rho**2*
+thetaa**2 + 192080000*df(y1,t,2)*df(y1,t)*df(y3,t)*y3*y4*y5*phi*rho*thetaa**2 + 960400*df(y1,t,2)*df(y1,t)*df(
+y3,t)*y3*y4*rho*thetaa*(300*betas - 200*c2*thetaa + 100*nu + 100*phi - 839806*thetaa + 53) - 192080000*df(y1,t
+,2)*df(y1,t)*df(y3,t)*y3*y5*c1*phi*rho**2*thetaa**2 + 960400*df(y1,t,2)*df(y1,t)*df(y3,t)*y3*c1*rho**2*thetaa*
+( - 300*betas + 200*c2*thetaa - 100*nu - 100*phi + 839806*thetaa - 53) + 96040000*df(y1,t,2)*df(y1,t)*df(y3,t)
+*y4*y5**2*phi**2*rho*thetaa**2 + 960400*df(y1,t,2)*df(y1,t)*df(y3,t)*y4*y5*phi*rho*thetaa*(300*betas - 200*c2*
+thetaa - 100*gammah - 839806*thetaa + 53) + 1372*df(y1,t,2)*df(y1,t)*df(y3,t)*y4*rho*( - 210000*betas*c2*
+thetaa - 881796300*betas*thetaa + 30000*betas + 70000*c2**2*thetaa**2 + 70000*c2*gammah*thetaa + 587864200*c2*
+thetaa**2 - 37100*c2*thetaa + 293930000*gammah*thetaa + 1234229705863*thetaa**2 - 155784013*thetaa + 1050) - 
+96040000*df(y1,t,2)*df(y1,t)*df(y3,t)*y5**2*c1*phi**2*rho**2*thetaa**2 + 960400*df(y1,t,2)*df(y1,t)*df(y3,t)*
+y5*c1*phi*rho**2*thetaa*( - 300*betas + 200*c2*thetaa + 100*gammah + 839806*thetaa - 53) + 1372*df(y1,t,2)*df(
+y1,t)*df(y3,t)*c1*rho**2*(210000*betas*c2*thetaa + 881796300*betas*thetaa - 30000*betas - 70000*c2**2*thetaa**
+2 - 70000*c2*gammah*thetaa - 587864200*c2*thetaa**2 + 37100*c2*thetaa - 293930000*gammah*thetaa - 
+1234229705863*thetaa**2 + 155784013*thetaa - 1050) - 1344560000*df(y1,t,2)*df(y1,t)*y1**2*y3**2*rho*thetaa**2 
+- 2689120000*df(y1,t,2)*df(y1,t)*y1**2*y3*y5*phi*rho*thetaa**2 + 13445600*df(y1,t,2)*df(y1,t)*y1**2*y3*thetaa*
+(400*betae*rho - 1300*betae - 400*betas*rho + 200*c2*rho*thetaa + 839803*rho*thetaa - 3*rho) - 1344560000*df(
+y1,t,2)*df(y1,t)*y1**2*y5**2*phi**2*rho*thetaa**2 + 13445600*df(y1,t,2)*df(y1,t)*y1**2*y5*phi*thetaa*(400*
+betae*rho - 1300*betae - 400*betas*rho + 200*c2*rho*thetaa + 839803*rho*thetaa - 3*rho) + 13445600*df(y1,t,2)*
+df(y1,t)*y1**2*thetaa*( - 400*betae*c2*rho + 1300*betae*c2 - 1679600*betae*rho + 5458700*betae + 400*betas*c2*
+rho + 1679600*betas*rho - 100*c2**2*rho*thetaa - 839803*c2*rho*thetaa + 3*c2*rho - 1763172697*rho*thetaa + 
+12597*rho) + 1344560000*df(y1,t,2)*df(y1,t)*y1*y3**3*rho*thetaa**2*(gammah + nu) - 96040000*df(y1,t,2)*df(y1,t
+)*y1*y3**2*y4*rho*thetaa**2 + 2689120000*df(y1,t,2)*df(y1,t)*y1*y3**2*y5*phi*rho*thetaa**2*(gammah + nu) + 
+1920800*df(y1,t,2)*df(y1,t)*y1*y3**2*rho*thetaa*(2100*betas*gammah + 2100*betas*nu + 50*c1*rho*thetaa - 1400*
+c2*gammah*thetaa - 1400*c2*nu*thetaa + 700*gammah*phi - 5878642*gammah*thetaa + 21*gammah + 700*nu*phi - 
+5878642*nu*thetaa + 271*nu) - 192080000*df(y1,t,2)*df(y1,t)*y1*y3*y4*y5*phi*rho*thetaa**2 + 960400*df(y1,t,2)*
+df(y1,t)*y1*y3*y4*thetaa*(500*betae*rho - 1600*betae - 500*betas*rho + 200*c2*rho*thetaa + 839803*rho*thetaa -
+ 3*rho) + 1344560000*df(y1,t,2)*df(y1,t)*y1*y3*y5**2*phi**2*rho*thetaa**2*(gammah + nu) + 1920800*df(y1,t,2)*
+df(y1,t)*y1*y3*y5*phi*rho*thetaa*(2100*betas*gammah + 2100*betas*nu + 100*c1*rho*thetaa - 1400*c2*gammah*
+thetaa - 1400*c2*nu*thetaa - 5878642*gammah*thetaa + 21*gammah - 5878642*nu*thetaa + 271*nu) + 19208*df(y1,t,2
+)*df(y1,t)*y1*y3*rho*( - 25000*betae*c1*rho*thetaa + 80000*betae*c1*thetaa + 25000*betas*c1*rho*thetaa - 
+210000*betas*c2*gammah*thetaa - 210000*betas*c2*nu*thetaa - 881796300*betas*gammah*thetaa + 30000*betas*gammah
+ - 881796300*betas*nu*thetaa + 30000*betas*nu - 10000*c1*c2*rho*thetaa**2 - 41990150*c1*rho*thetaa**2 + 150*c1
+*rho*thetaa + 70000*c2**2*gammah*thetaa**2 + 70000*c2**2*nu*thetaa**2 + 587864200*c2*gammah*thetaa**2 - 2100*
+c2*gammah*thetaa + 587864200*c2*nu*thetaa**2 - 27100*c2*nu*thetaa + 1234229705863*gammah*thetaa**2 - 8818713*
+gammah*thetaa + 750*gammah + 1234229705863*nu*thetaa**2 - 113793713*nu*thetaa + 750*nu) - 96040000*df(y1,t,2)*
+df(y1,t)*y1*y4*y5**2*phi**2*rho*thetaa**2 + 960400*df(y1,t,2)*df(y1,t)*y1*y4*y5*phi*thetaa*(500*betae*rho - 
+1600*betae - 500*betas*rho + 200*c2*rho*thetaa + 839803*rho*thetaa - 3*rho) + 960400*df(y1,t,2)*df(y1,t)*y1*y4
+*thetaa*( - 500*betae*c2*rho + 1600*betae*c2 - 2099500*betae*rho + 6718400*betae + 500*betas*c2*rho + 2099500*
+betas*rho - 100*c2**2*rho*thetaa - 839803*c2*rho*thetaa + 3*c2*rho - 1763172697*rho*thetaa + 12597*rho) + 
+96040000*df(y1,t,2)*df(y1,t)*y1*y5**2*c1*phi**2*rho**2*thetaa**2 + 960400*df(y1,t,2)*df(y1,t)*y1*y5*c1*phi*rho
+*thetaa*( - 500*betae*rho + 1600*betae + 500*betas*rho - 200*c2*rho*thetaa - 839803*rho*thetaa + 3*rho) + 
+960400*df(y1,t,2)*df(y1,t)*y1*c1*rho*thetaa*(500*betae*c2*rho - 1600*betae*c2 + 2099500*betae*rho - 6718400*
+betae - 500*betas*c2*rho - 2099500*betas*rho + 100*c2**2*rho*thetaa + 839803*c2*rho*thetaa - 3*c2*rho + 
+1763172697*rho*thetaa - 12597*rho) + 96040000*df(y1,t,2)*df(y1,t)*y3**3*y4*rho*thetaa**2*(gammah + nu) - 
+96040000*df(y1,t,2)*df(y1,t)*y3**3*c1*rho**2*thetaa**2*(gammah + nu) + 192080000*df(y1,t,2)*df(y1,t)*y3**2*y4*
+y5*phi*rho*thetaa**2*(gammah + nu) + 960400*df(y1,t,2)*df(y1,t)*y3**2*y4*rho*thetaa*(300*betas*gammah + 300*
+betas*nu - 200*c2*gammah*thetaa - 200*c2*nu*thetaa + 100*gammah*phi - 839806*gammah*thetaa + 3*gammah + 100*nu
+*phi - 839806*nu*thetaa + 53*nu) - 192080000*df(y1,t,2)*df(y1,t)*y3**2*y5*c1*phi*rho**2*thetaa**2*(gammah + nu
+) + 960400*df(y1,t,2)*df(y1,t)*y3**2*c1*rho**2*thetaa*( - 300*betas*gammah - 300*betas*nu + 200*c2*gammah*
+thetaa + 200*c2*nu*thetaa - 100*gammah*phi + 839806*gammah*thetaa - 3*gammah - 100*nu*phi + 839806*nu*thetaa -
+ 53*nu) + 6860000*df(y1,t,2)*df(y1,t)*y3*y4**2*thetaa*(betae*rho - 3*betae - betas*rho) + 96040000*df(y1,t,2)*
+df(y1,t)*y3*y4*y5**2*phi**2*rho*thetaa**2*(gammah + nu) + 960400*df(y1,t,2)*df(y1,t)*y3*y4*y5*phi*rho*thetaa*(
+300*betas*gammah + 300*betas*nu - 200*c2*gammah*thetaa - 200*c2*nu*thetaa - 839806*gammah*thetaa + 3*gammah - 
+839806*nu*thetaa + 53*nu) + 1372*df(y1,t,2)*df(y1,t)*y3*y4*rho*( - 10000*betae*c1*rho*thetaa + 30000*betae*c1*
+thetaa + 10000*betas*c1*rho*thetaa - 210000*betas*c2*gammah*thetaa - 210000*betas*c2*nu*thetaa - 881796300*
+betas*gammah*thetaa + 30000*betas*gammah - 881796300*betas*nu*thetaa + 30000*betas*nu + 70000*c2**2*gammah*
+thetaa**2 + 70000*c2**2*nu*thetaa**2 + 587864200*c2*gammah*thetaa**2 - 2100*c2*gammah*thetaa + 587864200*c2*nu
+*thetaa**2 - 37100*c2*nu*thetaa + 1234229705863*gammah*thetaa**2 - 8819013*gammah*thetaa + 1050*gammah + 
+1234229705863*nu*thetaa**2 - 155784013*nu*thetaa + 1050*nu) - 96040000*df(y1,t,2)*df(y1,t)*y3*y5**2*c1*phi**2*
+rho**2*thetaa**2*(gammah + nu) + 960400*df(y1,t,2)*df(y1,t)*y3*y5*c1*phi*rho**2*thetaa*( - 300*betas*gammah - 
+300*betas*nu + 200*c2*gammah*thetaa + 200*c2*nu*thetaa + 839806*gammah*thetaa - 3*gammah + 839806*nu*thetaa - 
+53*nu) + 1372*df(y1,t,2)*df(y1,t)*y3*c1*rho**2*(5000*betae*c1*rho*thetaa - 15000*betae*c1*thetaa - 5000*betas*
+c1*rho*thetaa + 210000*betas*c2*gammah*thetaa + 210000*betas*c2*nu*thetaa + 881796300*betas*gammah*thetaa - 
+30000*betas*gammah + 881796300*betas*nu*thetaa - 30000*betas*nu - 70000*c2**2*gammah*thetaa**2 - 70000*c2**2*
+nu*thetaa**2 - 587864200*c2*gammah*thetaa**2 + 2100*c2*gammah*thetaa - 587864200*c2*nu*thetaa**2 + 37100*c2*nu
+*thetaa - 1234229705863*gammah*thetaa**2 + 8819013*gammah*thetaa - 1050*gammah - 1234229705863*nu*thetaa**2 + 
+155784013*nu*thetaa - 1050*nu) + 6860000*df(y1,t,2)*df(y1,t)*y4**2*y5*phi*thetaa*(betae*rho - 3*betae - betas*
+rho) + 6860000*df(y1,t,2)*df(y1,t)*y4**2*thetaa*( - betae*c2*rho + 3*betae*c2 - 4199*betae*rho + 12597*betae +
+ betas*c2*rho + 4199*betas*rho) + 13720000*df(y1,t,2)*df(y1,t)*y4*y5*c1*phi*rho*thetaa*( - betae*rho + 3*betae
+ + betas*rho) + 13720000*df(y1,t,2)*df(y1,t)*y4*c1*rho*thetaa*(betae*c2*rho - 3*betae*c2 + 4199*betae*rho - 
+12597*betae - betas*c2*rho - 4199*betas*rho) + 6860000*df(y1,t,2)*df(y1,t)*y5*c1**2*phi*rho**2*thetaa*(betae*
+rho - 3*betae - betas*rho) + 6860000*df(y1,t,2)*df(y1,t)*c1**2*rho**2*thetaa*( - betae*c2*rho + 3*betae*c2 - 
+4199*betae*rho + 12597*betae + betas*c2*rho + 4199*betas*rho) + 96040000*df(y1,t,2)*df(y3,t)**2*y1**2*rho*
+thetaa*(14*betas + 1) + 6860000*df(y1,t,2)*df(y3,t)**2*y1*y4*rho*thetaa*(28*betas + 1) + 6860000*df(y1,t,2)*df
+(y3,t)**2*y1*c1*rho**2*thetaa*( - 28*betas - 1) + 6860000*df(y1,t,2)*df(y3,t)**2*y4**2*betas*rho*thetaa - 
+13720000*df(y1,t,2)*df(y3,t)**2*y4*betas*c1*rho**2*thetaa + 6860000*df(y1,t,2)*df(y3,t)**2*betas*c1**2*rho**3*
+thetaa + 96040000*df(y1,t,2)*df(y3,t)*y1**2*y3**2*rho*thetaa**2*(14*betas + 1) + 192080000*df(y1,t,2)*df(y3,t)
+*y1**2*y3*y5*phi*rho*thetaa**2*(14*betas + 1) + 137200*df(y1,t,2)*df(y3,t)*y1**2*y3*rho*thetaa*( - 19600*betas
+*c2*thetaa + 9800*betas*gammah + 9800*betas*nu + 9800*betas*phi - 82300988*betas*thetaa + 1400*betas - 1400*c2
+*thetaa + 700*nu + 700*phi - 5878642*thetaa + 121) + 96040000*df(y1,t,2)*df(y3,t)*y1**2*y5**2*phi**2*rho*
+thetaa**2*(14*betas + 1) + 137200*df(y1,t,2)*df(y3,t)*y1**2*y5*phi*rho*thetaa*( - 19600*betas*c2*thetaa - 
+82300988*betas*thetaa + 1400*betas - 1400*c2*thetaa - 700*gammah - 5878642*thetaa + 121) + 1372*df(y1,t,2)*df(
+y3,t)*y1**2*rho*(980000*betas*c2**2*thetaa**2 + 8230098800*betas*c2*thetaa**2 - 140000*betas*c2*thetaa + 
+17279215882082*betas*thetaa**2 - 587864200*betas*thetaa + 70000*c2**2*thetaa**2 + 70000*c2*gammah*thetaa + 
+587864200*c2*thetaa**2 - 12100*c2*thetaa + 293930000*gammah*thetaa + 1234229705863*thetaa**2 - 50808263*thetaa
+ + 300) + 6860000*df(y1,t,2)*df(y3,t)*y1*y3**2*y4*rho*thetaa**2*(28*betas + 1) + 6860000*df(y1,t,2)*df(y3,t)*
+y1*y3**2*c1*rho**2*thetaa**2*( - 28*betas - 1) + 13720000*df(y1,t,2)*df(y3,t)*y1*y3*y4*y5*phi*rho*thetaa**2*(
+28*betas + 1) + 9800*df(y1,t,2)*df(y3,t)*y1*y3*y4*rho*thetaa*( - 39200*betas*c2*thetaa + 19600*betas*gammah + 
+19600*betas*nu + 19600*betas*phi - 164601976*betas*thetaa + 700*betas - 1400*c2*thetaa + 700*nu + 700*phi - 
+5878642*thetaa + 171) + 13720000*df(y1,t,2)*df(y3,t)*y1*y3*y5*c1*phi*rho**2*thetaa**2*( - 28*betas - 1) + 9800
+*df(y1,t,2)*df(y3,t)*y1*y3*c1*rho**2*thetaa*(39200*betas*c2*thetaa - 19600*betas*gammah - 19600*betas*nu - 
+19600*betas*phi + 164601976*betas*thetaa - 700*betas + 1400*c2*thetaa - 700*nu - 700*phi + 5878642*thetaa - 
+171) + 6860000*df(y1,t,2)*df(y3,t)*y1*y4*y5**2*phi**2*rho*thetaa**2*(28*betas + 1) + 9800*df(y1,t,2)*df(y3,t)*
+y1*y4*y5*phi*rho*thetaa*( - 39200*betas*c2*thetaa - 164601976*betas*thetaa + 700*betas - 1400*c2*thetaa - 700*
+gammah - 5878642*thetaa + 171) + 98*df(y1,t,2)*df(y3,t)*y1*y4*rho*(1960000*betas*c2**2*thetaa**2 + 16460197600
+*betas*c2*thetaa**2 - 70000*betas*c2*thetaa + 34558431764164*betas*thetaa**2 - 293932100*betas*thetaa - 30000*
+betas + 70000*c2**2*thetaa**2 + 70000*c2*gammah*thetaa + 587864200*c2*thetaa**2 - 17100*c2*thetaa + 293930000*
+gammah*thetaa + 1234229705863*thetaa**2 - 71803413*thetaa + 450) + 6860000*df(y1,t,2)*df(y3,t)*y1*y5**2*c1*phi
+**2*rho**2*thetaa**2*( - 28*betas - 1) + 9800*df(y1,t,2)*df(y3,t)*y1*y5*c1*phi*rho**2*thetaa*(39200*betas*c2*
+thetaa + 164601976*betas*thetaa - 700*betas + 1400*c2*thetaa + 700*gammah + 5878642*thetaa - 171) + 98*df(y1,t
+,2)*df(y3,t)*y1*c1*rho**2*( - 1960000*betas*c2**2*thetaa**2 - 16460197600*betas*c2*thetaa**2 + 70000*betas*c2*
+thetaa - 34558431764164*betas*thetaa**2 + 293932100*betas*thetaa + 30000*betas - 70000*c2**2*thetaa**2 - 70000
+*c2*gammah*thetaa - 587864200*c2*thetaa**2 + 17100*c2*thetaa - 293930000*gammah*thetaa - 1234229705863*thetaa
+**2 + 71803413*thetaa - 450) + 6860000*df(y1,t,2)*df(y3,t)*y3**2*y4**2*betas*rho*thetaa**2 - 13720000*df(y1,t,
+2)*df(y3,t)*y3**2*y4*betas*c1*rho**2*thetaa**2 + 6860000*df(y1,t,2)*df(y3,t)*y3**2*betas*c1**2*rho**3*thetaa**
+2 + 13720000*df(y1,t,2)*df(y3,t)*y3*y4**2*y5*betas*phi*rho*thetaa**2 + 19600*df(y1,t,2)*df(y3,t)*y3*y4**2*
+betas*rho*thetaa*( - 700*c2*thetaa + 350*gammah + 350*nu + 350*phi - 2939321*thetaa - 25) - 27440000*df(y1,t,2
+)*df(y3,t)*y3*y4*y5*betas*c1*phi*rho**2*thetaa**2 + 39200*df(y1,t,2)*df(y3,t)*y3*y4*betas*c1*rho**2*thetaa*(
+700*c2*thetaa - 350*gammah - 350*nu - 350*phi + 2939321*thetaa + 25) + 13720000*df(y1,t,2)*df(y3,t)*y3*y5*
+betas*c1**2*phi*rho**3*thetaa**2 + 19600*df(y1,t,2)*df(y3,t)*y3*betas*c1**2*rho**3*thetaa*( - 700*c2*thetaa + 
+350*gammah + 350*nu + 350*phi - 2939321*thetaa - 25) + 6860000*df(y1,t,2)*df(y3,t)*y4**2*y5**2*betas*phi**2*
+rho*thetaa**2 + 19600*df(y1,t,2)*df(y3,t)*y4**2*y5*betas*phi*rho*thetaa*( - 700*c2*thetaa - 2939321*thetaa - 
+25) + 14*df(y1,t,2)*df(y3,t)*y4**2*betas*rho*(490000*c2**2*thetaa**2 + 4115049400*c2*thetaa**2 + 35000*c2*
+thetaa + 8639607941041*thetaa**2 + 146966050*thetaa - 15000) - 13720000*df(y1,t,2)*df(y3,t)*y4*y5**2*betas*c1*
+phi**2*rho**2*thetaa**2 + 39200*df(y1,t,2)*df(y3,t)*y4*y5*betas*c1*phi*rho**2*thetaa*(700*c2*thetaa + 2939321*
+thetaa + 25) + 28*df(y1,t,2)*df(y3,t)*y4*betas*c1*rho**2*( - 490000*c2**2*thetaa**2 - 4115049400*c2*thetaa**2 
+- 35000*c2*thetaa - 8639607941041*thetaa**2 - 146966050*thetaa + 15000) + 6860000*df(y1,t,2)*df(y3,t)*y5**2*
+betas*c1**2*phi**2*rho**3*thetaa**2 + 19600*df(y1,t,2)*df(y3,t)*y5*betas*c1**2*phi*rho**3*thetaa*( - 700*c2*
+thetaa - 2939321*thetaa - 25) + 14*df(y1,t,2)*df(y3,t)*betas*c1**2*rho**3*(490000*c2**2*thetaa**2 + 4115049400
+*c2*thetaa**2 + 35000*c2*thetaa + 8639607941041*thetaa**2 + 146966050*thetaa - 15000) + 96040000*df(y1,t,2)*y1
+**3*y3**2*rho*thetaa**2*( - 14*betas - 1) + 192080000*df(y1,t,2)*y1**3*y3*y5*phi*rho*thetaa**2*( - 14*betas - 
+1) + 960400*df(y1,t,2)*y1**3*y3*thetaa*( - 100*betae + 2800*betas*c2*rho*thetaa + 11757242*betas*rho*thetaa - 
+200*betas*rho + 200*c2*rho*thetaa + 839803*rho*thetaa - 3*rho) + 96040000*df(y1,t,2)*y1**3*y5**2*phi**2*rho*
+thetaa**2*( - 14*betas - 1) + 960400*df(y1,t,2)*y1**3*y5*phi*thetaa*( - 100*betae + 2800*betas*c2*rho*thetaa +
+ 11757242*betas*rho*thetaa - 200*betas*rho + 200*c2*rho*thetaa + 839803*rho*thetaa - 3*rho) + 960400*df(y1,t,2
+)*y1**3*thetaa*(100*betae*c2 + 419900*betae - 1400*betas*c2**2*rho*thetaa - 11757242*betas*c2*rho*thetaa + 200
+*betas*c2*rho - 24684417758*betas*rho*thetaa + 839800*betas*rho - 100*c2**2*rho*thetaa - 839803*c2*rho*thetaa 
++ 3*c2*rho - 1763172697*rho*thetaa + 12597*rho) + 96040000*df(y1,t,2)*y1**2*y3**3*rho*thetaa**2*(14*betas*
+gammah + 14*betas*nu + gammah + nu) + 6860000*df(y1,t,2)*y1**2*y3**2*y4*rho*thetaa**2*( - 28*betas - 1) + 
+192080000*df(y1,t,2)*y1**2*y3**2*y5*phi*rho*thetaa**2*(14*betas*gammah + 14*betas*nu + gammah + nu) + 137200*
+df(y1,t,2)*y1**2*y3**2*rho*thetaa*(1400*betas*c1*rho*thetaa - 19600*betas*c2*gammah*thetaa - 19600*betas*c2*nu
+*thetaa + 9800*betas*gammah*phi - 82300988*betas*gammah*thetaa + 1400*betas*gammah + 9800*betas*nu*phi - 
+82300988*betas*nu*thetaa + 1400*betas*nu + 50*c1*rho*thetaa - 1400*c2*gammah*thetaa - 1400*c2*nu*thetaa + 700*
+gammah*phi - 5878642*gammah*thetaa + 21*gammah + 700*nu*phi - 5878642*nu*thetaa + 121*nu) + 13720000*df(y1,t,2
+)*y1**2*y3*y4*y5*phi*rho*thetaa**2*( - 28*betas - 1) + 68600*df(y1,t,2)*y1**2*y3*y4*thetaa*( - 300*betae*rho +
+ 600*betae + 5600*betas*c2*rho*thetaa + 23514484*betas*rho*thetaa - 100*betas*rho + 200*c2*rho*thetaa + 839803
+*rho*thetaa - 3*rho) + 96040000*df(y1,t,2)*y1**2*y3*y5**2*phi**2*rho*thetaa**2*(14*betas*gammah + 14*betas*nu 
++ gammah + nu) + 137200*df(y1,t,2)*y1**2*y3*y5*phi*rho*thetaa*(2800*betas*c1*rho*thetaa - 19600*betas*c2*
+gammah*thetaa - 19600*betas*c2*nu*thetaa - 82300988*betas*gammah*thetaa + 1400*betas*gammah - 82300988*betas*
+nu*thetaa + 1400*betas*nu + 100*c1*rho*thetaa - 1400*c2*gammah*thetaa - 1400*c2*nu*thetaa - 5878642*gammah*
+thetaa + 21*gammah - 5878642*nu*thetaa + 121*nu) + 1372*df(y1,t,2)*y1**2*y3*rho*(15000*betae*c1*rho*thetaa - 
+30000*betae*c1*thetaa - 280000*betas*c1*c2*rho*thetaa**2 - 1175724200*betas*c1*rho*thetaa**2 + 5000*betas*c1*
+rho*thetaa + 980000*betas*c2**2*gammah*thetaa**2 + 980000*betas*c2**2*nu*thetaa**2 + 8230098800*betas*c2*
+gammah*thetaa**2 - 140000*betas*c2*gammah*thetaa + 8230098800*betas*c2*nu*thetaa**2 - 140000*betas*c2*nu*
+thetaa + 17279215882082*betas*gammah*thetaa**2 - 587864200*betas*gammah*thetaa + 17279215882082*betas*nu*
+thetaa**2 - 587864200*betas*nu*thetaa - 10000*c1*c2*rho*thetaa**2 - 41990150*c1*rho*thetaa**2 + 150*c1*rho*
+thetaa + 70000*c2**2*gammah*thetaa**2 + 70000*c2**2*nu*thetaa**2 + 587864200*c2*gammah*thetaa**2 - 2100*c2*
+gammah*thetaa + 587864200*c2*nu*thetaa**2 - 12100*c2*nu*thetaa + 1234229705863*gammah*thetaa**2 - 8818263*
+gammah*thetaa + 300*gammah + 1234229705863*nu*thetaa**2 - 50808263*nu*thetaa + 300*nu) + 6860000*df(y1,t,2)*y1
+**2*y4*y5**2*phi**2*rho*thetaa**2*( - 28*betas - 1) + 68600*df(y1,t,2)*y1**2*y4*y5*phi*thetaa*( - 300*betae*
+rho + 600*betae + 5600*betas*c2*rho*thetaa + 23514484*betas*rho*thetaa - 100*betas*rho + 200*c2*rho*thetaa + 
+839803*rho*thetaa - 3*rho) + 68600*df(y1,t,2)*y1**2*y4*thetaa*(300*betae*c2*rho - 600*betae*c2 + 1259700*betae
+*rho - 2519400*betae - 2800*betas*c2**2*rho*thetaa - 23514484*betas*c2*rho*thetaa + 100*betas*c2*rho - 
+49368835516*betas*rho*thetaa + 419900*betas*rho - 100*c2**2*rho*thetaa - 839803*c2*rho*thetaa + 3*c2*rho - 
+1763172697*rho*thetaa + 12597*rho) + 6860000*df(y1,t,2)*y1**2*y5**2*c1*phi**2*rho**2*thetaa**2*(28*betas + 1) 
++ 68600*df(y1,t,2)*y1**2*y5*c1*phi*rho*thetaa*(300*betae*rho - 600*betae - 5600*betas*c2*rho*thetaa - 23514484
+*betas*rho*thetaa + 100*betas*rho - 200*c2*rho*thetaa - 839803*rho*thetaa + 3*rho) + 68600*df(y1,t,2)*y1**2*c1
+*rho*thetaa*( - 300*betae*c2*rho + 600*betae*c2 - 1259700*betae*rho + 2519400*betae + 2800*betas*c2**2*rho*
+thetaa + 23514484*betas*c2*rho*thetaa - 100*betas*c2*rho + 49368835516*betas*rho*thetaa - 419900*betas*rho + 
+100*c2**2*rho*thetaa + 839803*c2*rho*thetaa - 3*c2*rho + 1763172697*rho*thetaa - 12597*rho) + 6860000*df(y1,t,
+2)*y1*y3**3*y4*rho*thetaa**2*(28*betas*gammah + 28*betas*nu + gammah + nu) + 6860000*df(y1,t,2)*y1*y3**3*c1*
+rho**2*thetaa**2*( - 28*betas*gammah - 28*betas*nu - gammah - nu) - 6860000*df(y1,t,2)*y1*y3**2*y4**2*betas*
+rho*thetaa**2 + 13720000*df(y1,t,2)*y1*y3**2*y4*y5*phi*rho*thetaa**2*(28*betas*gammah + 28*betas*nu + gammah +
+ nu) + 9800*df(y1,t,2)*y1*y3**2*y4*rho*thetaa*(1400*betas*c1*rho*thetaa - 39200*betas*c2*gammah*thetaa - 39200
+*betas*c2*nu*thetaa + 19600*betas*gammah*phi - 164601976*betas*gammah*thetaa + 700*betas*gammah + 19600*betas*
+nu*phi - 164601976*betas*nu*thetaa + 700*betas*nu - 1400*c2*gammah*thetaa - 1400*c2*nu*thetaa + 700*gammah*phi
+ - 5878642*gammah*thetaa + 21*gammah + 700*nu*phi - 5878642*nu*thetaa + 171*nu) + 13720000*df(y1,t,2)*y1*y3**2
+*y5*c1*phi*rho**2*thetaa**2*( - 28*betas*gammah - 28*betas*nu - gammah - nu) + 9800*df(y1,t,2)*y1*y3**2*c1*rho
+**2*thetaa*( - 700*betas*c1*rho*thetaa + 39200*betas*c2*gammah*thetaa + 39200*betas*c2*nu*thetaa - 19600*betas
+*gammah*phi + 164601976*betas*gammah*thetaa - 700*betas*gammah - 19600*betas*nu*phi + 164601976*betas*nu*
+thetaa - 700*betas*nu + 1400*c2*gammah*thetaa + 1400*c2*nu*thetaa - 700*gammah*phi + 5878642*gammah*thetaa - 
+21*gammah - 700*nu*phi + 5878642*nu*thetaa - 171*nu) - 13720000*df(y1,t,2)*y1*y3*y4**2*y5*betas*phi*rho*thetaa
+**2 + 9800*df(y1,t,2)*y1*y3*y4**2*thetaa*( - 150*betae*rho + 350*betae + 1400*betas*c2*rho*thetaa + 5878621*
+betas*rho*thetaa + 50*betas*rho) + 6860000*df(y1,t,2)*y1*y3*y4*y5**2*phi**2*rho*thetaa**2*(28*betas*gammah + 
+28*betas*nu + gammah + nu) + 9800*df(y1,t,2)*y1*y3*y4*y5*phi*rho*thetaa*(2800*betas*c1*rho*thetaa - 39200*
+betas*c2*gammah*thetaa - 39200*betas*c2*nu*thetaa - 164601976*betas*gammah*thetaa + 700*betas*gammah - 
+164601976*betas*nu*thetaa + 700*betas*nu - 1400*c2*gammah*thetaa - 1400*c2*nu*thetaa - 5878642*gammah*thetaa +
+ 21*gammah - 5878642*nu*thetaa + 171*nu) + 98*df(y1,t,2)*y1*y3*y4*rho*(30000*betae*c1*rho*thetaa - 70000*betae
+*c1*thetaa - 280000*betas*c1*c2*rho*thetaa**2 - 1175724200*betas*c1*rho*thetaa**2 - 10000*betas*c1*rho*thetaa 
++ 1960000*betas*c2**2*gammah*thetaa**2 + 1960000*betas*c2**2*nu*thetaa**2 + 16460197600*betas*c2*gammah*thetaa
+**2 - 70000*betas*c2*gammah*thetaa + 16460197600*betas*c2*nu*thetaa**2 - 70000*betas*c2*nu*thetaa + 
+34558431764164*betas*gammah*thetaa**2 - 293932100*betas*gammah*thetaa - 30000*betas*gammah + 34558431764164*
+betas*nu*thetaa**2 - 293932100*betas*nu*thetaa - 30000*betas*nu + 70000*c2**2*gammah*thetaa**2 + 70000*c2**2*
+nu*thetaa**2 + 587864200*c2*gammah*thetaa**2 - 2100*c2*gammah*thetaa + 587864200*c2*nu*thetaa**2 - 17100*c2*nu
+*thetaa + 1234229705863*gammah*thetaa**2 - 8818413*gammah*thetaa + 450*gammah + 1234229705863*nu*thetaa**2 - 
+71803413*nu*thetaa + 450*nu) + 6860000*df(y1,t,2)*y1*y3*y5**2*c1*phi**2*rho**2*thetaa**2*( - 28*betas*gammah -
+ 28*betas*nu - gammah - nu) + 9800*df(y1,t,2)*y1*y3*y5*c1*phi*rho**2*thetaa*( - 1400*betas*c1*rho*thetaa + 
+39200*betas*c2*gammah*thetaa + 39200*betas*c2*nu*thetaa + 164601976*betas*gammah*thetaa - 700*betas*gammah + 
+164601976*betas*nu*thetaa - 700*betas*nu + 1400*c2*gammah*thetaa + 1400*c2*nu*thetaa + 5878642*gammah*thetaa -
+ 21*gammah + 5878642*nu*thetaa - 171*nu) + 98*df(y1,t,2)*y1*y3*c1*rho**2*( - 15000*betae*c1*rho*thetaa + 35000
+*betae*c1*thetaa + 140000*betas*c1*c2*rho*thetaa**2 + 587862100*betas*c1*rho*thetaa**2 + 5000*betas*c1*rho*
+thetaa - 1960000*betas*c2**2*gammah*thetaa**2 - 1960000*betas*c2**2*nu*thetaa**2 - 16460197600*betas*c2*gammah
+*thetaa**2 + 70000*betas*c2*gammah*thetaa - 16460197600*betas*c2*nu*thetaa**2 + 70000*betas*c2*nu*thetaa - 
+34558431764164*betas*gammah*thetaa**2 + 293932100*betas*gammah*thetaa + 30000*betas*gammah - 34558431764164*
+betas*nu*thetaa**2 + 293932100*betas*nu*thetaa + 30000*betas*nu - 70000*c2**2*gammah*thetaa**2 - 70000*c2**2*
+nu*thetaa**2 - 587864200*c2*gammah*thetaa**2 + 2100*c2*gammah*thetaa - 587864200*c2*nu*thetaa**2 + 17100*c2*nu
+*thetaa - 1234229705863*gammah*thetaa**2 + 8818413*gammah*thetaa - 450*gammah - 1234229705863*nu*thetaa**2 + 
+71803413*nu*thetaa - 450*nu) - 6860000*df(y1,t,2)*y1*y4**2*y5**2*betas*phi**2*rho*thetaa**2 + 9800*df(y1,t,2)*
+y1*y4**2*y5*phi*thetaa*( - 150*betae*rho + 350*betae + 1400*betas*c2*rho*thetaa + 5878621*betas*rho*thetaa + 
+50*betas*rho) + 9800*df(y1,t,2)*y1*y4**2*thetaa*(150*betae*c2*rho - 350*betae*c2 + 629850*betae*rho - 1469650*
+betae - 700*betas*c2**2*rho*thetaa - 5878621*betas*c2*rho*thetaa - 50*betas*c2*rho - 12342208879*betas*rho*
+thetaa - 209950*betas*rho) + 13720000*df(y1,t,2)*y1*y4*y5**2*betas*c1*phi**2*rho**2*thetaa**2 + 19600*df(y1,t,
+2)*y1*y4*y5*c1*phi*rho*thetaa*(150*betae*rho - 350*betae - 1400*betas*c2*rho*thetaa - 5878621*betas*rho*thetaa
+ - 50*betas*rho) + 19600*df(y1,t,2)*y1*y4*c1*rho*thetaa*( - 150*betae*c2*rho + 350*betae*c2 - 629850*betae*rho
+ + 1469650*betae + 700*betas*c2**2*rho*thetaa + 5878621*betas*c2*rho*thetaa + 50*betas*c2*rho + 12342208879*
+betas*rho*thetaa + 209950*betas*rho) - 6860000*df(y1,t,2)*y1*y5**2*betas*c1**2*phi**2*rho**3*thetaa**2 + 9800*
+df(y1,t,2)*y1*y5*c1**2*phi*rho**2*thetaa*( - 150*betae*rho + 350*betae + 1400*betas*c2*rho*thetaa + 5878621*
+betas*rho*thetaa + 50*betas*rho) + 9800*df(y1,t,2)*y1*c1**2*rho**2*thetaa*(150*betae*c2*rho - 350*betae*c2 + 
+629850*betae*rho - 1469650*betae - 700*betas*c2**2*rho*thetaa - 5878621*betas*c2*rho*thetaa - 50*betas*c2*rho 
+- 12342208879*betas*rho*thetaa - 209950*betas*rho) + 6860000*df(y1,t,2)*y3**3*y4**2*betas*rho*thetaa**2*(
+gammah + nu) - 13720000*df(y1,t,2)*y3**3*y4*betas*c1*rho**2*thetaa**2*(gammah + nu) + 6860000*df(y1,t,2)*y3**3
+*betas*c1**2*rho**3*thetaa**2*(gammah + nu) + 13720000*df(y1,t,2)*y3**2*y4**2*y5*betas*phi*rho*thetaa**2*(
+gammah + nu) + 19600*df(y1,t,2)*y3**2*y4**2*betas*rho*thetaa*( - 700*c2*gammah*thetaa - 700*c2*nu*thetaa + 350
+*gammah*phi - 2939321*gammah*thetaa - 25*gammah + 350*nu*phi - 2939321*nu*thetaa - 25*nu) - 27440000*df(y1,t,2
+)*y3**2*y4*y5*betas*c1*phi*rho**2*thetaa**2*(gammah + nu) + 39200*df(y1,t,2)*y3**2*y4*betas*c1*rho**2*thetaa*(
+700*c2*gammah*thetaa + 700*c2*nu*thetaa - 350*gammah*phi + 2939321*gammah*thetaa + 25*gammah - 350*nu*phi + 
+2939321*nu*thetaa + 25*nu) + 13720000*df(y1,t,2)*y3**2*y5*betas*c1**2*phi*rho**3*thetaa**2*(gammah + nu) + 
+19600*df(y1,t,2)*y3**2*betas*c1**2*rho**3*thetaa*( - 700*c2*gammah*thetaa - 700*c2*nu*thetaa + 350*gammah*phi 
+- 2939321*gammah*thetaa - 25*gammah + 350*nu*phi - 2939321*nu*thetaa - 25*nu) + 6860000*df(y1,t,2)*y3*y4**2*y5
+**2*betas*phi**2*rho*thetaa**2*(gammah + nu) + 19600*df(y1,t,2)*y3*y4**2*y5*betas*phi*rho*thetaa*( - 700*c2*
+gammah*thetaa - 700*c2*nu*thetaa - 2939321*gammah*thetaa - 25*gammah - 2939321*nu*thetaa - 25*nu) + 14*df(y1,t
+,2)*y3*y4**2*betas*rho*(490000*c2**2*gammah*thetaa**2 + 490000*c2**2*nu*thetaa**2 + 4115049400*c2*gammah*
+thetaa**2 + 35000*c2*gammah*thetaa + 4115049400*c2*nu*thetaa**2 + 35000*c2*nu*thetaa + 8639607941041*gammah*
+thetaa**2 + 146966050*gammah*thetaa - 15000*gammah + 8639607941041*nu*thetaa**2 + 146966050*nu*thetaa - 15000*
+nu) - 13720000*df(y1,t,2)*y3*y4*y5**2*betas*c1*phi**2*rho**2*thetaa**2*(gammah + nu) + 39200*df(y1,t,2)*y3*y4*
+y5*betas*c1*phi*rho**2*thetaa*(700*c2*gammah*thetaa + 700*c2*nu*thetaa + 2939321*gammah*thetaa + 25*gammah + 
+2939321*nu*thetaa + 25*nu) + 28*df(y1,t,2)*y3*y4*betas*c1*rho**2*( - 490000*c2**2*gammah*thetaa**2 - 490000*c2
+**2*nu*thetaa**2 - 4115049400*c2*gammah*thetaa**2 - 35000*c2*gammah*thetaa - 4115049400*c2*nu*thetaa**2 - 
+35000*c2*nu*thetaa - 8639607941041*gammah*thetaa**2 - 146966050*gammah*thetaa + 15000*gammah - 8639607941041*
+nu*thetaa**2 - 146966050*nu*thetaa + 15000*nu) + 6860000*df(y1,t,2)*y3*y5**2*betas*c1**2*phi**2*rho**3*thetaa
+**2*(gammah + nu) + 19600*df(y1,t,2)*y3*y5*betas*c1**2*phi*rho**3*thetaa*( - 700*c2*gammah*thetaa - 700*c2*nu*
+thetaa - 2939321*gammah*thetaa - 25*gammah - 2939321*nu*thetaa - 25*nu) + 14*df(y1,t,2)*y3*betas*c1**2*rho**3*
+(490000*c2**2*gammah*thetaa**2 + 490000*c2**2*nu*thetaa**2 + 4115049400*c2*gammah*thetaa**2 + 35000*c2*gammah*
+thetaa + 4115049400*c2*nu*thetaa**2 + 35000*c2*nu*thetaa + 8639607941041*gammah*thetaa**2 + 146966050*gammah*
+thetaa - 15000*gammah + 8639607941041*nu*thetaa**2 + 146966050*nu*thetaa - 15000*nu) + 37647680000*df(y1,t)**4
+*y3*betae*thetaa + 37647680000*df(y1,t)**4*y5*betae*phi*thetaa + 37647680000*df(y1,t)**4*betae*thetaa*( - c2 -
+ 4199) - 1344560000*df(y1,t)**3*df(y3,t)**2*rho*thetaa - 1344560000*df(y1,t)**3*df(y3,t)*y3**2*rho*thetaa**2 -
+ 2689120000*df(y1,t)**3*df(y3,t)*y3*y5*phi*rho*thetaa**2 + 1920800*df(y1,t)**3*df(y3,t)*y3*rho*thetaa*( - 1400
+*betas + 1400*c2*thetaa - 700*nu - 700*phi + 5878642*thetaa - 271) - 1344560000*df(y1,t)**3*df(y3,t)*y5**2*phi
+**2*rho*thetaa**2 + 1920800*df(y1,t)**3*df(y3,t)*y5*phi*rho*thetaa*( - 1400*betas + 1400*c2*thetaa + 700*
+gammah + 5878642*thetaa - 271) + 19208*df(y1,t)**3*df(y3,t)*rho*(140000*betas*c2*thetaa + 587864200*betas*
+thetaa - 20000*betas - 70000*c2**2*thetaa**2 - 70000*c2*gammah*thetaa - 587864200*c2*thetaa**2 + 27100*c2*
+thetaa - 293930000*gammah*thetaa - 1234229705863*thetaa**2 + 113793713*thetaa - 750) + 1344560000*df(y1,t)**3*
+y1*y3**2*rho*thetaa**2 + 2689120000*df(y1,t)**3*y1*y3*y5*phi*rho*thetaa**2 + 13445600*df(y1,t)**3*y1*y3*thetaa
+*( - 300*betae*rho + 1000*betae + 300*betas*rho - 200*c2*rho*thetaa - 839803*rho*thetaa + 3*rho) + 1344560000*
+df(y1,t)**3*y1*y5**2*phi**2*rho*thetaa**2 + 13445600*df(y1,t)**3*y1*y5*phi*thetaa*( - 300*betae*rho + 1000*
+betae + 300*betas*rho - 200*c2*rho*thetaa - 839803*rho*thetaa + 3*rho) + 13445600*df(y1,t)**3*y1*thetaa*(300*
+betae*c2*rho - 1000*betae*c2 + 1259700*betae*rho - 4199000*betae - 300*betas*c2*rho - 1259700*betas*rho + 100*
+c2**2*rho*thetaa + 839803*c2*rho*thetaa - 3*c2*rho + 1763172697*rho*thetaa - 12597*rho) - 1344560000*df(y1,t)
+**3*y3**3*rho*thetaa**2*(gammah + nu) - 2689120000*df(y1,t)**3*y3**2*y5*phi*rho*thetaa**2*(gammah + nu) + 
+1920800*df(y1,t)**3*y3**2*rho*thetaa*( - 1400*betas*gammah - 1400*betas*nu + 1400*c2*gammah*thetaa + 1400*c2*
+nu*thetaa - 700*gammah*phi + 5878642*gammah*thetaa - 21*gammah - 700*nu*phi + 5878642*nu*thetaa - 271*nu) + 
+96040000*df(y1,t)**3*y3*y4*thetaa*( - betae*rho - 2*betae + betas*rho) - 1344560000*df(y1,t)**3*y3*y5**2*phi**
+2*rho*thetaa**2*(gammah + nu) + 1920800*df(y1,t)**3*y3*y5*phi*rho*thetaa*( - 1400*betas*gammah - 1400*betas*nu
+ + 1400*c2*gammah*thetaa + 1400*c2*nu*thetaa + 5878642*gammah*thetaa - 21*gammah + 5878642*nu*thetaa - 271*nu)
+ + 19208*df(y1,t)**3*y3*rho*(5000*betae*c1*rho*thetaa + 10000*betae*c1*thetaa - 5000*betas*c1*rho*thetaa + 
+140000*betas*c2*gammah*thetaa + 140000*betas*c2*nu*thetaa + 587864200*betas*gammah*thetaa - 20000*betas*gammah
+ + 587864200*betas*nu*thetaa - 20000*betas*nu - 70000*c2**2*gammah*thetaa**2 - 70000*c2**2*nu*thetaa**2 - 
+587864200*c2*gammah*thetaa**2 + 2100*c2*gammah*thetaa - 587864200*c2*nu*thetaa**2 + 27100*c2*nu*thetaa - 
+1234229705863*gammah*thetaa**2 + 8818713*gammah*thetaa - 750*gammah - 1234229705863*nu*thetaa**2 + 113793713*
+nu*thetaa - 750*nu) + 96040000*df(y1,t)**3*y4*y5*phi*thetaa*( - betae*rho - 2*betae + betas*rho) + 96040000*df
+(y1,t)**3*y4*thetaa*(betae*c2*rho + 2*betae*c2 + 4199*betae*rho + 8398*betae - betas*c2*rho - 4199*betas*rho) 
++ 96040000*df(y1,t)**3*y5*c1*phi*rho*thetaa*(betae*rho + 2*betae - betas*rho) + 96040000*df(y1,t)**3*c1*rho*
+thetaa*( - betae*c2*rho - 2*betae*c2 - 4199*betae*rho - 8398*betae + betas*c2*rho + 4199*betas*rho) - 
+1344560000*df(y1,t)**2*df(y3,t)**2*y1*betas*rho*thetaa + 6860000*df(y1,t)**2*df(y3,t)**2*y4*rho*thetaa*( - 14*
+betas + 3) + 6860000*df(y1,t)**2*df(y3,t)**2*c1*rho**2*thetaa*(14*betas - 3) - 1344560000*df(y1,t)**2*df(y3,t)
+*y1*y3**2*betas*rho*thetaa**2 - 2689120000*df(y1,t)**2*df(y3,t)*y1*y3*y5*betas*phi*rho*thetaa**2 + 548800*df(
+y1,t)**2*df(y3,t)*y1*y3*rho*thetaa*(4900*betas*c2*thetaa - 2450*betas*gammah - 2450*betas*nu - 2450*betas*phi 
++ 20575247*betas*thetaa - 525*betas - 50) - 1344560000*df(y1,t)**2*df(y3,t)*y1*y5**2*betas*phi**2*rho*thetaa**
+2 + 548800*df(y1,t)**2*df(y3,t)*y1*y5*phi*rho*thetaa*(4900*betas*c2*thetaa + 20575247*betas*thetaa - 525*betas
+ - 50) + 2744*df(y1,t)**2*df(y3,t)*y1*rho*( - 490000*betas*c2**2*thetaa**2 - 4115049400*betas*c2*thetaa**2 + 
+105000*betas*c2*thetaa - 8639607941041*betas*thetaa**2 + 440898150*betas*thetaa - 5000*betas + 10000*c2*thetaa
+ + 41990300*thetaa - 300) + 6860000*df(y1,t)**2*df(y3,t)*y3**2*y4*rho*thetaa**2*( - 14*betas + 3) + 6860000*df
+(y1,t)**2*df(y3,t)*y3**2*c1*rho**2*thetaa**2*(14*betas - 3) + 13720000*df(y1,t)**2*df(y3,t)*y3*y4*y5*phi*rho*
+thetaa**2*( - 14*betas + 3) + 9800*df(y1,t)**2*df(y3,t)*y3*y4*rho*thetaa*(19600*betas*c2*thetaa - 9800*betas*
+gammah - 9800*betas*nu - 9800*betas*phi + 82300988*betas*thetaa + 2100*betas - 4200*c2*thetaa + 2100*nu + 2100
+*phi - 17635926*thetaa + 563) + 13720000*df(y1,t)**2*df(y3,t)*y3*y5*c1*phi*rho**2*thetaa**2*(14*betas - 3) + 
+9800*df(y1,t)**2*df(y3,t)*y3*c1*rho**2*thetaa*( - 19600*betas*c2*thetaa + 9800*betas*gammah + 9800*betas*nu + 
+9800*betas*phi - 82300988*betas*thetaa - 2100*betas + 4200*c2*thetaa - 2100*nu - 2100*phi + 17635926*thetaa - 
+563) + 6860000*df(y1,t)**2*df(y3,t)*y4*y5**2*phi**2*rho*thetaa**2*( - 14*betas + 3) + 9800*df(y1,t)**2*df(y3,t
+)*y4*y5*phi*rho*thetaa*(19600*betas*c2*thetaa + 82300988*betas*thetaa + 2100*betas - 4200*c2*thetaa - 2100*
+gammah - 17635926*thetaa + 563) + 98*df(y1,t)**2*df(y3,t)*y4*rho*( - 980000*betas*c2**2*thetaa**2 - 8230098800
+*betas*c2*thetaa**2 - 210000*betas*c2*thetaa - 17279215882082*betas*thetaa**2 - 881796300*betas*thetaa + 50000
+*betas + 210000*c2**2*thetaa**2 + 210000*c2*gammah*thetaa + 1763592600*c2*thetaa**2 - 56300*c2*thetaa + 
+881790000*gammah*thetaa + 3702689117589*thetaa**2 - 236405389*thetaa + 1500) + 6860000*df(y1,t)**2*df(y3,t)*y5
+**2*c1*phi**2*rho**2*thetaa**2*(14*betas - 3) + 9800*df(y1,t)**2*df(y3,t)*y5*c1*phi*rho**2*thetaa*( - 19600*
+betas*c2*thetaa - 82300988*betas*thetaa - 2100*betas + 4200*c2*thetaa + 2100*gammah + 17635926*thetaa - 563) +
+ 98*df(y1,t)**2*df(y3,t)*c1*rho**2*(980000*betas*c2**2*thetaa**2 + 8230098800*betas*c2*thetaa**2 + 210000*
+betas*c2*thetaa + 17279215882082*betas*thetaa**2 + 881796300*betas*thetaa - 50000*betas - 210000*c2**2*thetaa
+**2 - 210000*c2*gammah*thetaa - 1763592600*c2*thetaa**2 + 56300*c2*thetaa - 881790000*gammah*thetaa - 
+3702689117589*thetaa**2 + 236405389*thetaa - 1500) + 1344560000*df(y1,t)**2*y1**2*y3**2*betas*rho*thetaa**2 + 
+2689120000*df(y1,t)**2*y1**2*y3*y5*betas*phi*rho*thetaa**2 + 1920800*df(y1,t)**2*y1**2*y3*thetaa*(50*betae - 
+1400*betas*c2*rho*thetaa - 5878621*betas*rho*thetaa + 100*betas*rho) + 1344560000*df(y1,t)**2*y1**2*y5**2*
+betas*phi**2*rho*thetaa**2 + 1920800*df(y1,t)**2*y1**2*y5*phi*thetaa*(50*betae - 1400*betas*c2*rho*thetaa - 
+5878621*betas*rho*thetaa + 100*betas*rho) + 1920800*df(y1,t)**2*y1**2*thetaa*( - 50*betae*c2 - 209950*betae + 
+700*betas*c2**2*rho*thetaa + 5878621*betas*c2*rho*thetaa - 100*betas*c2*rho + 12342208879*betas*rho*thetaa - 
+419900*betas*rho) - 1344560000*df(y1,t)**2*y1*y3**3*betas*rho*thetaa**2*(gammah + nu) + 6860000*df(y1,t)**2*y1
+*y3**2*y4*rho*thetaa**2*(14*betas - 3) - 2689120000*df(y1,t)**2*y1*y3**2*y5*betas*phi*rho*thetaa**2*(gammah + 
+nu) + 274400*df(y1,t)**2*y1*y3**2*rho*thetaa*( - 350*betas*c1*rho*thetaa + 9800*betas*c2*gammah*thetaa + 9800*
+betas*c2*nu*thetaa - 4900*betas*gammah*phi + 41150494*betas*gammah*thetaa - 1050*betas*gammah - 4900*betas*nu*
+phi + 41150494*betas*nu*thetaa - 1050*betas*nu + 75*c1*rho*thetaa - 100*nu) + 13720000*df(y1,t)**2*y1*y3*y4*y5
+*phi*rho*thetaa**2*(14*betas - 3) + 68600*df(y1,t)**2*y1*y3*y4*thetaa*(900*betae*rho - 3000*betae - 2800*betas
+*c2*rho*thetaa - 11757242*betas*rho*thetaa - 700*betas*rho + 600*c2*rho*thetaa + 2519409*rho*thetaa - 9*rho) -
+ 1344560000*df(y1,t)**2*y1*y3*y5**2*betas*phi**2*rho*thetaa**2*(gammah + nu) + 548800*df(y1,t)**2*y1*y3*y5*phi
+*rho*thetaa*( - 350*betas*c1*rho*thetaa + 4900*betas*c2*gammah*thetaa + 4900*betas*c2*nu*thetaa + 20575247*
+betas*gammah*thetaa - 525*betas*gammah + 20575247*betas*nu*thetaa - 525*betas*nu + 75*c1*rho*thetaa - 50*nu) +
+ 2744*df(y1,t)**2*y1*y3*rho*( - 22500*betae*c1*rho*thetaa + 75000*betae*c1*thetaa + 70000*betas*c1*c2*rho*
+thetaa**2 + 293931050*betas*c1*rho*thetaa**2 + 17500*betas*c1*rho*thetaa - 490000*betas*c2**2*gammah*thetaa**2
+ - 490000*betas*c2**2*nu*thetaa**2 - 4115049400*betas*c2*gammah*thetaa**2 + 105000*betas*c2*gammah*thetaa - 
+4115049400*betas*c2*nu*thetaa**2 + 105000*betas*c2*nu*thetaa - 8639607941041*betas*gammah*thetaa**2 + 
+440898150*betas*gammah*thetaa - 5000*betas*gammah - 8639607941041*betas*nu*thetaa**2 + 440898150*betas*nu*
+thetaa - 5000*betas*nu - 15000*c1*c2*rho*thetaa**2 - 62985225*c1*rho*thetaa**2 + 225*c1*rho*thetaa + 10000*c2*
+nu*thetaa + 300*gammah*thetaa - 300*gammah + 41990300*nu*thetaa - 300*nu) + 6860000*df(y1,t)**2*y1*y4*y5**2*
+phi**2*rho*thetaa**2*(14*betas - 3) + 68600*df(y1,t)**2*y1*y4*y5*phi*thetaa*(900*betae*rho - 3000*betae - 2800
+*betas*c2*rho*thetaa - 11757242*betas*rho*thetaa - 700*betas*rho + 600*c2*rho*thetaa + 2519409*rho*thetaa - 9*
+rho) + 68600*df(y1,t)**2*y1*y4*thetaa*( - 900*betae*c2*rho + 3000*betae*c2 - 3779100*betae*rho + 12597000*
+betae + 1400*betas*c2**2*rho*thetaa + 11757242*betas*c2*rho*thetaa + 700*betas*c2*rho + 24684417758*betas*rho*
+thetaa + 2939300*betas*rho - 300*c2**2*rho*thetaa - 2519409*c2*rho*thetaa + 9*c2*rho - 5289518091*rho*thetaa +
+ 37791*rho) + 6860000*df(y1,t)**2*y1*y5**2*c1*phi**2*rho**2*thetaa**2*( - 14*betas + 3) + 68600*df(y1,t)**2*y1
+*y5*c1*phi*rho*thetaa*( - 900*betae*rho + 3000*betae + 2800*betas*c2*rho*thetaa + 11757242*betas*rho*thetaa + 
+700*betas*rho - 600*c2*rho*thetaa - 2519409*rho*thetaa + 9*rho) + 68600*df(y1,t)**2*y1*c1*rho*thetaa*(900*
+betae*c2*rho - 3000*betae*c2 + 3779100*betae*rho - 12597000*betae - 1400*betas*c2**2*rho*thetaa - 11757242*
+betas*c2*rho*thetaa - 700*betas*c2*rho - 24684417758*betas*rho*thetaa - 2939300*betas*rho + 300*c2**2*rho*
+thetaa + 2519409*c2*rho*thetaa - 9*c2*rho + 5289518091*rho*thetaa - 37791*rho) + 6860000*df(y1,t)**2*y3**3*y4*
+rho*thetaa**2*( - 14*betas*gammah - 14*betas*nu + 3*gammah + 3*nu) + 6860000*df(y1,t)**2*y3**3*c1*rho**2*
+thetaa**2*(14*betas*gammah + 14*betas*nu - 3*gammah - 3*nu) + 13720000*df(y1,t)**2*y3**2*y4*y5*phi*rho*thetaa
+**2*( - 14*betas*gammah - 14*betas*nu + 3*gammah + 3*nu) + 9800*df(y1,t)**2*y3**2*y4*rho*thetaa*(19600*betas*
+c2*gammah*thetaa + 19600*betas*c2*nu*thetaa - 9800*betas*gammah*phi + 82300988*betas*gammah*thetaa + 2100*
+betas*gammah - 9800*betas*nu*phi + 82300988*betas*nu*thetaa + 2100*betas*nu - 4200*c2*gammah*thetaa - 4200*c2*
+nu*thetaa + 2100*gammah*phi - 17635926*gammah*thetaa + 63*gammah + 2100*nu*phi - 17635926*nu*thetaa + 563*nu) 
++ 13720000*df(y1,t)**2*y3**2*y5*c1*phi*rho**2*thetaa**2*(14*betas*gammah + 14*betas*nu - 3*gammah - 3*nu) + 
+9800*df(y1,t)**2*y3**2*c1*rho**2*thetaa*( - 19600*betas*c2*gammah*thetaa - 19600*betas*c2*nu*thetaa + 9800*
+betas*gammah*phi - 82300988*betas*gammah*thetaa - 2100*betas*gammah + 9800*betas*nu*phi - 82300988*betas*nu*
+thetaa - 2100*betas*nu + 4200*c2*gammah*thetaa + 4200*c2*nu*thetaa - 2100*gammah*phi + 17635926*gammah*thetaa 
+- 63*gammah - 2100*nu*phi + 17635926*nu*thetaa - 563*nu) + 490000*df(y1,t)**2*y3*y4**2*thetaa*(3*betae*rho - 7
+*betae - 3*betas*rho) + 6860000*df(y1,t)**2*y3*y4*y5**2*phi**2*rho*thetaa**2*( - 14*betas*gammah - 14*betas*nu
+ + 3*gammah + 3*nu) + 9800*df(y1,t)**2*y3*y4*y5*phi*rho*thetaa*(19600*betas*c2*gammah*thetaa + 19600*betas*c2*
+nu*thetaa + 82300988*betas*gammah*thetaa + 2100*betas*gammah + 82300988*betas*nu*thetaa + 2100*betas*nu - 4200
+*c2*gammah*thetaa - 4200*c2*nu*thetaa - 17635926*gammah*thetaa + 63*gammah - 17635926*nu*thetaa + 563*nu) + 98
+*df(y1,t)**2*y3*y4*rho*( - 30000*betae*c1*rho*thetaa + 70000*betae*c1*thetaa + 30000*betas*c1*rho*thetaa - 
+980000*betas*c2**2*gammah*thetaa**2 - 980000*betas*c2**2*nu*thetaa**2 - 8230098800*betas*c2*gammah*thetaa**2 -
+ 210000*betas*c2*gammah*thetaa - 8230098800*betas*c2*nu*thetaa**2 - 210000*betas*c2*nu*thetaa - 17279215882082
+*betas*gammah*thetaa**2 - 881796300*betas*gammah*thetaa + 50000*betas*gammah - 17279215882082*betas*nu*thetaa
+**2 - 881796300*betas*nu*thetaa + 50000*betas*nu + 210000*c2**2*gammah*thetaa**2 + 210000*c2**2*nu*thetaa**2 +
+ 1763592600*c2*gammah*thetaa**2 - 6300*c2*gammah*thetaa + 1763592600*c2*nu*thetaa**2 - 56300*c2*nu*thetaa + 
+3702689117589*gammah*thetaa**2 - 26455389*gammah*thetaa + 1500*gammah + 3702689117589*nu*thetaa**2 - 236405389
+*nu*thetaa + 1500*nu) + 6860000*df(y1,t)**2*y3*y5**2*c1*phi**2*rho**2*thetaa**2*(14*betas*gammah + 14*betas*nu
+ - 3*gammah - 3*nu) + 9800*df(y1,t)**2*y3*y5*c1*phi*rho**2*thetaa*( - 19600*betas*c2*gammah*thetaa - 19600*
+betas*c2*nu*thetaa - 82300988*betas*gammah*thetaa - 2100*betas*gammah - 82300988*betas*nu*thetaa - 2100*betas*
+nu + 4200*c2*gammah*thetaa + 4200*c2*nu*thetaa + 17635926*gammah*thetaa - 63*gammah + 17635926*nu*thetaa - 563
+*nu) + 98*df(y1,t)**2*y3*c1*rho**2*(15000*betae*c1*rho*thetaa - 35000*betae*c1*thetaa - 15000*betas*c1*rho*
+thetaa + 980000*betas*c2**2*gammah*thetaa**2 + 980000*betas*c2**2*nu*thetaa**2 + 8230098800*betas*c2*gammah*
+thetaa**2 + 210000*betas*c2*gammah*thetaa + 8230098800*betas*c2*nu*thetaa**2 + 210000*betas*c2*nu*thetaa + 
+17279215882082*betas*gammah*thetaa**2 + 881796300*betas*gammah*thetaa - 50000*betas*gammah + 17279215882082*
+betas*nu*thetaa**2 + 881796300*betas*nu*thetaa - 50000*betas*nu - 210000*c2**2*gammah*thetaa**2 - 210000*c2**2
+*nu*thetaa**2 - 1763592600*c2*gammah*thetaa**2 + 6300*c2*gammah*thetaa - 1763592600*c2*nu*thetaa**2 + 56300*c2
+*nu*thetaa - 3702689117589*gammah*thetaa**2 + 26455389*gammah*thetaa - 1500*gammah - 3702689117589*nu*thetaa**
+2 + 236405389*nu*thetaa - 1500*nu) + 490000*df(y1,t)**2*y4**2*y5*phi*thetaa*(3*betae*rho - 7*betae - 3*betas*
+rho) + 490000*df(y1,t)**2*y4**2*thetaa*( - 3*betae*c2*rho + 7*betae*c2 - 12597*betae*rho + 29393*betae + 3*
+betas*c2*rho + 12597*betas*rho) + 980000*df(y1,t)**2*y4*y5*c1*phi*rho*thetaa*( - 3*betae*rho + 7*betae + 3*
+betas*rho) + 980000*df(y1,t)**2*y4*c1*rho*thetaa*(3*betae*c2*rho - 7*betae*c2 + 12597*betae*rho - 29393*betae 
+- 3*betas*c2*rho - 12597*betas*rho) + 490000*df(y1,t)**2*y5*c1**2*phi*rho**2*thetaa*(3*betae*rho - 7*betae - 3
+*betas*rho) + 490000*df(y1,t)**2*c1**2*rho**2*thetaa*( - 3*betae*c2*rho + 7*betae*c2 - 12597*betae*rho + 29393
+*betae + 3*betas*c2*rho + 12597*betas*rho) + 13720000*df(y1,t)*df(y3,t)**2*y1**2*rho*thetaa*(7*betas + 1) + 
+490000*df(y1,t)*df(y3,t)**2*y1*y4*rho*thetaa*(56*betas + 5) + 490000*df(y1,t)*df(y3,t)**2*y1*c1*rho**2*thetaa*
+( - 56*betas - 5) + 1470000*df(y1,t)*df(y3,t)**2*y4**2*betas*rho*thetaa - 2940000*df(y1,t)*df(y3,t)**2*y4*
+betas*c1*rho**2*thetaa + 1470000*df(y1,t)*df(y3,t)**2*betas*c1**2*rho**3*thetaa + 13720000*df(y1,t)*df(y3,t)*
+y1**2*y3**2*rho*thetaa**2*(7*betas + 1) + 27440000*df(y1,t)*df(y3,t)*y1**2*y3*y5*phi*rho*thetaa**2*(7*betas + 
+1) + 39200*df(y1,t)*df(y3,t)*y1**2*y3*rho*thetaa*( - 4900*betas*c2*thetaa + 2450*betas*gammah + 2450*betas*nu 
++ 2450*betas*phi - 20575247*betas*thetaa + 175*betas - 700*c2*thetaa + 350*nu + 350*phi - 2939321*thetaa - 2) 
++ 13720000*df(y1,t)*df(y3,t)*y1**2*y5**2*phi**2*rho*thetaa**2*(7*betas + 1) + 39200*df(y1,t)*df(y3,t)*y1**2*y5
+*phi*rho*thetaa*( - 4900*betas*c2*thetaa - 20575247*betas*thetaa + 175*betas - 700*c2*thetaa - 350*gammah - 
+2939321*thetaa - 2) + 196*df(y1,t)*df(y3,t)*y1**2*rho*(490000*betas*c2**2*thetaa**2 + 4115049400*betas*c2*
+thetaa**2 - 35000*betas*c2*thetaa + 8639607941041*betas*thetaa**2 - 146966050*betas*thetaa - 5000*betas + 
+70000*c2**2*thetaa**2 + 70000*c2*gammah*thetaa + 587864200*c2*thetaa**2 + 400*c2*thetaa + 293930000*gammah*
+thetaa + 1234229705863*thetaa**2 + 1679612*thetaa - 75) + 490000*df(y1,t)*df(y3,t)*y1*y3**2*y4*rho*thetaa**2*(
+56*betas + 5) + 490000*df(y1,t)*df(y3,t)*y1*y3**2*c1*rho**2*thetaa**2*( - 56*betas - 5) + 980000*df(y1,t)*df(
+y3,t)*y1*y3*y4*y5*phi*rho*thetaa**2*(56*betas + 5) + 700*df(y1,t)*df(y3,t)*y1*y3*y4*rho*thetaa*( - 78400*betas
+*c2*thetaa + 39200*betas*gammah + 39200*betas*nu + 39200*betas*phi - 329203952*betas*thetaa + 7700*betas - 
+7000*c2*thetaa + 3500*nu + 3500*phi - 29393210*thetaa + 705) + 980000*df(y1,t)*df(y3,t)*y1*y3*y5*c1*phi*rho**2
+*thetaa**2*( - 56*betas - 5) + 700*df(y1,t)*df(y3,t)*y1*y3*c1*rho**2*thetaa*(78400*betas*c2*thetaa - 39200*
+betas*gammah - 39200*betas*nu - 39200*betas*phi + 329203952*betas*thetaa - 7700*betas + 7000*c2*thetaa - 3500*
+nu - 3500*phi + 29393210*thetaa - 705) + 490000*df(y1,t)*df(y3,t)*y1*y4*y5**2*phi**2*rho*thetaa**2*(56*betas +
+ 5) + 700*df(y1,t)*df(y3,t)*y1*y4*y5*phi*rho*thetaa*( - 78400*betas*c2*thetaa - 329203952*betas*thetaa + 7700*
+betas - 7000*c2*thetaa - 3500*gammah - 29393210*thetaa + 705) + 7*df(y1,t)*df(y3,t)*y1*y4*rho*(3920000*betas*
+c2**2*thetaa**2 + 32920395200*betas*c2*thetaa**2 - 770000*betas*c2*thetaa + 69116863528328*betas*thetaa**2 - 
+3233253100*betas*thetaa + 30000*betas + 350000*c2**2*thetaa**2 + 350000*c2*gammah*thetaa + 2939321000*c2*
+thetaa**2 - 70500*c2*thetaa + 1469650000*gammah*thetaa + 6171148529315*thetaa**2 - 296031615*thetaa + 1800) + 
+490000*df(y1,t)*df(y3,t)*y1*y5**2*c1*phi**2*rho**2*thetaa**2*( - 56*betas - 5) + 700*df(y1,t)*df(y3,t)*y1*y5*
+c1*phi*rho**2*thetaa*(78400*betas*c2*thetaa + 329203952*betas*thetaa - 7700*betas + 7000*c2*thetaa + 3500*
+gammah + 29393210*thetaa - 705) + 7*df(y1,t)*df(y3,t)*y1*c1*rho**2*( - 3920000*betas*c2**2*thetaa**2 - 
+32920395200*betas*c2*thetaa**2 + 770000*betas*c2*thetaa - 69116863528328*betas*thetaa**2 + 3233253100*betas*
+thetaa - 30000*betas - 350000*c2**2*thetaa**2 - 350000*c2*gammah*thetaa - 2939321000*c2*thetaa**2 + 70500*c2*
+thetaa - 1469650000*gammah*thetaa - 6171148529315*thetaa**2 + 296031615*thetaa - 1800) + 1470000*df(y1,t)*df(
+y3,t)*y3**2*y4**2*betas*rho*thetaa**2 - 2940000*df(y1,t)*df(y3,t)*y3**2*y4*betas*c1*rho**2*thetaa**2 + 1470000
+*df(y1,t)*df(y3,t)*y3**2*betas*c1**2*rho**3*thetaa**2 + 2940000*df(y1,t)*df(y3,t)*y3*y4**2*y5*betas*phi*rho*
+thetaa**2 + 1400*df(y1,t)*df(y3,t)*y3*y4**2*betas*rho*thetaa*( - 2100*c2*thetaa + 1050*gammah + 1050*nu + 1050
+*phi - 8817963*thetaa + 100) - 5880000*df(y1,t)*df(y3,t)*y3*y4*y5*betas*c1*phi*rho**2*thetaa**2 + 2800*df(y1,t
+)*df(y3,t)*y3*y4*betas*c1*rho**2*thetaa*(2100*c2*thetaa - 1050*gammah - 1050*nu - 1050*phi + 8817963*thetaa - 
+100) + 2940000*df(y1,t)*df(y3,t)*y3*y5*betas*c1**2*phi*rho**3*thetaa**2 + 1400*df(y1,t)*df(y3,t)*y3*betas*c1**
+2*rho**3*thetaa*( - 2100*c2*thetaa + 1050*gammah + 1050*nu + 1050*phi - 8817963*thetaa + 100) + 1470000*df(y1,
+t)*df(y3,t)*y4**2*y5**2*betas*phi**2*rho*thetaa**2 + 1400*df(y1,t)*df(y3,t)*y4**2*y5*betas*phi*rho*thetaa*( - 
+2100*c2*thetaa - 8817963*thetaa + 100) + df(y1,t)*df(y3,t)*y4**2*betas*rho*(1470000*c2**2*thetaa**2 + 
+12345148200*c2*thetaa**2 - 140000*c2*thetaa + 25918823823123*thetaa**2 - 587864200*thetaa - 10000) - 2940000*
+df(y1,t)*df(y3,t)*y4*y5**2*betas*c1*phi**2*rho**2*thetaa**2 + 2800*df(y1,t)*df(y3,t)*y4*y5*betas*c1*phi*rho**2
+*thetaa*(2100*c2*thetaa + 8817963*thetaa - 100) + 2*df(y1,t)*df(y3,t)*y4*betas*c1*rho**2*( - 1470000*c2**2*
+thetaa**2 - 12345148200*c2*thetaa**2 + 140000*c2*thetaa - 25918823823123*thetaa**2 + 587864200*thetaa + 10000)
+ + 1470000*df(y1,t)*df(y3,t)*y5**2*betas*c1**2*phi**2*rho**3*thetaa**2 + 1400*df(y1,t)*df(y3,t)*y5*betas*c1**2
+*phi*rho**3*thetaa*( - 2100*c2*thetaa - 8817963*thetaa + 100) + df(y1,t)*df(y3,t)*betas*c1**2*rho**3*(1470000*
+c2**2*thetaa**2 + 12345148200*c2*thetaa**2 - 140000*c2*thetaa + 25918823823123*thetaa**2 - 587864200*thetaa - 
+10000) + 13720000*df(y1,t)*y1**3*y3**2*rho*thetaa**2*( - 7*betas - 1) + 27440000*df(y1,t)*y1**3*y3*y5*phi*rho*
+thetaa**2*( - 7*betas - 1) + 137200*df(y1,t)*y1**3*y3*rho*thetaa*(1400*betas*c2*thetaa + 5878621*betas*thetaa 
+- 100*betas + 200*c2*thetaa + 839803*thetaa - 3) + 13720000*df(y1,t)*y1**3*y5**2*phi**2*rho*thetaa**2*( - 7*
+betas - 1) + 137200*df(y1,t)*y1**3*y5*phi*rho*thetaa*(1400*betas*c2*thetaa + 5878621*betas*thetaa - 100*betas 
++ 200*c2*thetaa + 839803*thetaa - 3) + 137200*df(y1,t)*y1**3*rho*thetaa*( - 700*betas*c2**2*thetaa - 5878621*
+betas*c2*thetaa + 100*betas*c2 - 12342208879*betas*thetaa + 419900*betas - 100*c2**2*thetaa - 839803*c2*thetaa
+ + 3*c2 - 1763172697*thetaa + 12597) + 13720000*df(y1,t)*y1**2*y3**3*rho*thetaa**2*(7*betas*gammah + 7*betas*
+nu + gammah + nu) + 490000*df(y1,t)*y1**2*y3**2*y4*rho*thetaa**2*( - 56*betas - 5) + 27440000*df(y1,t)*y1**2*
+y3**2*y5*phi*rho*thetaa**2*(7*betas*gammah + 7*betas*nu + gammah + nu) + 19600*df(y1,t)*y1**2*y3**2*rho*thetaa
+*(1400*betas*c1*rho*thetaa - 9800*betas*c2*gammah*thetaa - 9800*betas*c2*nu*thetaa + 4900*betas*gammah*phi - 
+41150494*betas*gammah*thetaa + 350*betas*gammah + 4900*betas*nu*phi - 41150494*betas*nu*thetaa + 350*betas*nu 
++ 125*c1*rho*thetaa - 1400*c2*gammah*thetaa - 1400*c2*nu*thetaa + 700*gammah*phi - 5878642*gammah*thetaa + 21*
+gammah + 700*nu*phi - 5878642*nu*thetaa - 4*nu) + 980000*df(y1,t)*y1**2*y3*y4*y5*phi*rho*thetaa**2*( - 56*
+betas - 5) + 4900*df(y1,t)*y1**2*y3*y4*thetaa*(600*betae*rho - 2000*betae + 11200*betas*c2*rho*thetaa + 
+47028968*betas*rho*thetaa - 1400*betas*rho + 1000*c2*rho*thetaa + 4199015*rho*thetaa - 15*rho) + 13720000*df(
+y1,t)*y1**2*y3*y5**2*phi**2*rho*thetaa**2*(7*betas*gammah + 7*betas*nu + gammah + nu) + 19600*df(y1,t)*y1**2*
+y3*y5*phi*rho*thetaa*(2800*betas*c1*rho*thetaa - 9800*betas*c2*gammah*thetaa - 9800*betas*c2*nu*thetaa - 
+41150494*betas*gammah*thetaa + 350*betas*gammah - 41150494*betas*nu*thetaa + 350*betas*nu + 250*c1*rho*thetaa 
+- 1400*c2*gammah*thetaa - 1400*c2*nu*thetaa - 5878642*gammah*thetaa + 21*gammah - 5878642*nu*thetaa - 4*nu) + 
+196*df(y1,t)*y1**2*y3*rho*( - 15000*betae*c1*rho*thetaa + 50000*betae*c1*thetaa - 280000*betas*c1*c2*rho*
+thetaa**2 - 1175724200*betas*c1*rho*thetaa**2 + 35000*betas*c1*rho*thetaa + 490000*betas*c2**2*gammah*thetaa**
+2 + 490000*betas*c2**2*nu*thetaa**2 + 4115049400*betas*c2*gammah*thetaa**2 - 35000*betas*c2*gammah*thetaa + 
+4115049400*betas*c2*nu*thetaa**2 - 35000*betas*c2*nu*thetaa + 8639607941041*betas*gammah*thetaa**2 - 146966050
+*betas*gammah*thetaa - 5000*betas*gammah + 8639607941041*betas*nu*thetaa**2 - 146966050*betas*nu*thetaa - 5000
+*betas*nu - 25000*c1*c2*rho*thetaa**2 - 104975375*c1*rho*thetaa**2 + 375*c1*rho*thetaa + 70000*c2**2*gammah*
+thetaa**2 + 70000*c2**2*nu*thetaa**2 + 587864200*c2*gammah*thetaa**2 - 2100*c2*gammah*thetaa + 587864200*c2*nu
+*thetaa**2 + 400*c2*nu*thetaa + 1234229705863*gammah*thetaa**2 - 8817888*gammah*thetaa - 75*gammah + 
+1234229705863*nu*thetaa**2 + 1679612*nu*thetaa - 75*nu) + 490000*df(y1,t)*y1**2*y4*y5**2*phi**2*rho*thetaa**2*
+( - 56*betas - 5) + 4900*df(y1,t)*y1**2*y4*y5*phi*thetaa*(600*betae*rho - 2000*betae + 11200*betas*c2*rho*
+thetaa + 47028968*betas*rho*thetaa - 1400*betas*rho + 1000*c2*rho*thetaa + 4199015*rho*thetaa - 15*rho) + 4900
+*df(y1,t)*y1**2*y4*thetaa*( - 600*betae*c2*rho + 2000*betae*c2 - 2519400*betae*rho + 8398000*betae - 5600*
+betas*c2**2*rho*thetaa - 47028968*betas*c2*rho*thetaa + 1400*betas*c2*rho - 98737671032*betas*rho*thetaa + 
+5878600*betas*rho - 500*c2**2*rho*thetaa - 4199015*c2*rho*thetaa + 15*c2*rho - 8815863485*rho*thetaa + 62985*
+rho) + 490000*df(y1,t)*y1**2*y5**2*c1*phi**2*rho**2*thetaa**2*(56*betas + 5) + 4900*df(y1,t)*y1**2*y5*c1*phi*
+rho*thetaa*( - 600*betae*rho + 2000*betae - 11200*betas*c2*rho*thetaa - 47028968*betas*rho*thetaa + 1400*betas
+*rho - 1000*c2*rho*thetaa - 4199015*rho*thetaa + 15*rho) + 4900*df(y1,t)*y1**2*c1*rho*thetaa*(600*betae*c2*rho
+ - 2000*betae*c2 + 2519400*betae*rho - 8398000*betae + 5600*betas*c2**2*rho*thetaa + 47028968*betas*c2*rho*
+thetaa - 1400*betas*c2*rho + 98737671032*betas*rho*thetaa - 5878600*betas*rho + 500*c2**2*rho*thetaa + 4199015
+*c2*rho*thetaa - 15*c2*rho + 8815863485*rho*thetaa - 62985*rho) + 490000*df(y1,t)*y1*y3**3*y4*rho*thetaa**2*(
+56*betas*gammah + 56*betas*nu + 5*gammah + 5*nu) + 490000*df(y1,t)*y1*y3**3*c1*rho**2*thetaa**2*( - 56*betas*
+gammah - 56*betas*nu - 5*gammah - 5*nu) - 1470000*df(y1,t)*y1*y3**2*y4**2*betas*rho*thetaa**2 + 980000*df(y1,t
+)*y1*y3**2*y4*y5*phi*rho*thetaa**2*(56*betas*gammah + 56*betas*nu + 5*gammah + 5*nu) + 700*df(y1,t)*y1*y3**2*
+y4*rho*thetaa*(4200*betas*c1*rho*thetaa - 78400*betas*c2*gammah*thetaa - 78400*betas*c2*nu*thetaa + 39200*
+betas*gammah*phi - 329203952*betas*gammah*thetaa + 7700*betas*gammah + 39200*betas*nu*phi - 329203952*betas*nu
+*thetaa + 7700*betas*nu - 7000*c2*gammah*thetaa - 7000*c2*nu*thetaa + 3500*gammah*phi - 29393210*gammah*thetaa
+ + 105*gammah + 3500*nu*phi - 29393210*nu*thetaa + 705*nu) + 980000*df(y1,t)*y1*y3**2*y5*c1*phi*rho**2*thetaa
+**2*( - 56*betas*gammah - 56*betas*nu - 5*gammah - 5*nu) + 700*df(y1,t)*y1*y3**2*c1*rho**2*thetaa*( - 2100*
+betas*c1*rho*thetaa + 78400*betas*c2*gammah*thetaa + 78400*betas*c2*nu*thetaa - 39200*betas*gammah*phi + 
+329203952*betas*gammah*thetaa - 7700*betas*gammah - 39200*betas*nu*phi + 329203952*betas*nu*thetaa - 7700*
+betas*nu + 7000*c2*gammah*thetaa + 7000*c2*nu*thetaa - 3500*gammah*phi + 29393210*gammah*thetaa - 105*gammah -
+ 3500*nu*phi + 29393210*nu*thetaa - 705*nu) - 2940000*df(y1,t)*y1*y3*y4**2*y5*betas*phi*rho*thetaa**2 + 2100*
+df(y1,t)*y1*y3*y4**2*betas*rho*thetaa*(1400*c2*thetaa + 5878621*thetaa - 100) + 490000*df(y1,t)*y1*y3*y4*y5**2
+*phi**2*rho*thetaa**2*(56*betas*gammah + 56*betas*nu + 5*gammah + 5*nu) + 700*df(y1,t)*y1*y3*y4*y5*phi*rho*
+thetaa*(8400*betas*c1*rho*thetaa - 78400*betas*c2*gammah*thetaa - 78400*betas*c2*nu*thetaa - 329203952*betas*
+gammah*thetaa + 7700*betas*gammah - 329203952*betas*nu*thetaa + 7700*betas*nu - 7000*c2*gammah*thetaa - 7000*
+c2*nu*thetaa - 29393210*gammah*thetaa + 105*gammah - 29393210*nu*thetaa + 705*nu) + 7*df(y1,t)*y1*y3*y4*rho*( 
+- 840000*betas*c1*c2*rho*thetaa**2 - 3527172600*betas*c1*rho*thetaa**2 + 60000*betas*c1*rho*thetaa + 3920000*
+betas*c2**2*gammah*thetaa**2 + 3920000*betas*c2**2*nu*thetaa**2 + 32920395200*betas*c2*gammah*thetaa**2 - 
+770000*betas*c2*gammah*thetaa + 32920395200*betas*c2*nu*thetaa**2 - 770000*betas*c2*nu*thetaa + 69116863528328
+*betas*gammah*thetaa**2 - 3233253100*betas*gammah*thetaa + 30000*betas*gammah + 69116863528328*betas*nu*thetaa
+**2 - 3233253100*betas*nu*thetaa + 30000*betas*nu + 350000*c2**2*gammah*thetaa**2 + 350000*c2**2*nu*thetaa**2 
++ 2939321000*c2*gammah*thetaa**2 - 10500*c2*gammah*thetaa + 2939321000*c2*nu*thetaa**2 - 70500*c2*nu*thetaa + 
+6171148529315*gammah*thetaa**2 - 44091615*gammah*thetaa + 1800*gammah + 6171148529315*nu*thetaa**2 - 296031615
+*nu*thetaa + 1800*nu) + 490000*df(y1,t)*y1*y3*y5**2*c1*phi**2*rho**2*thetaa**2*( - 56*betas*gammah - 56*betas*
+nu - 5*gammah - 5*nu) + 700*df(y1,t)*y1*y3*y5*c1*phi*rho**2*thetaa*( - 4200*betas*c1*rho*thetaa + 78400*betas*
+c2*gammah*thetaa + 78400*betas*c2*nu*thetaa + 329203952*betas*gammah*thetaa - 7700*betas*gammah + 329203952*
+betas*nu*thetaa - 7700*betas*nu + 7000*c2*gammah*thetaa + 7000*c2*nu*thetaa + 29393210*gammah*thetaa - 105*
+gammah + 29393210*nu*thetaa - 705*nu) + 7*df(y1,t)*y1*y3*c1*rho**2*(420000*betas*c1*c2*rho*thetaa**2 + 
+1763586300*betas*c1*rho*thetaa**2 - 30000*betas*c1*rho*thetaa - 3920000*betas*c2**2*gammah*thetaa**2 - 3920000
+*betas*c2**2*nu*thetaa**2 - 32920395200*betas*c2*gammah*thetaa**2 + 770000*betas*c2*gammah*thetaa - 
+32920395200*betas*c2*nu*thetaa**2 + 770000*betas*c2*nu*thetaa - 69116863528328*betas*gammah*thetaa**2 + 
+3233253100*betas*gammah*thetaa - 30000*betas*gammah - 69116863528328*betas*nu*thetaa**2 + 3233253100*betas*nu*
+thetaa - 30000*betas*nu - 350000*c2**2*gammah*thetaa**2 - 350000*c2**2*nu*thetaa**2 - 2939321000*c2*gammah*
+thetaa**2 + 10500*c2*gammah*thetaa - 2939321000*c2*nu*thetaa**2 + 70500*c2*nu*thetaa - 6171148529315*gammah*
+thetaa**2 + 44091615*gammah*thetaa - 1800*gammah - 6171148529315*nu*thetaa**2 + 296031615*nu*thetaa - 1800*nu)
+ - 1470000*df(y1,t)*y1*y4**2*y5**2*betas*phi**2*rho*thetaa**2 + 2100*df(y1,t)*y1*y4**2*y5*betas*phi*rho*thetaa
+*(1400*c2*thetaa + 5878621*thetaa - 100) + 2100*df(y1,t)*y1*y4**2*betas*rho*thetaa*( - 700*c2**2*thetaa - 
+5878621*c2*thetaa + 100*c2 - 12342208879*thetaa + 419900) + 2940000*df(y1,t)*y1*y4*y5**2*betas*c1*phi**2*rho**
+2*thetaa**2 + 4200*df(y1,t)*y1*y4*y5*betas*c1*phi*rho**2*thetaa*( - 1400*c2*thetaa - 5878621*thetaa + 100) + 
+4200*df(y1,t)*y1*y4*betas*c1*rho**2*thetaa*(700*c2**2*thetaa + 5878621*c2*thetaa - 100*c2 + 12342208879*thetaa
+ - 419900) - 1470000*df(y1,t)*y1*y5**2*betas*c1**2*phi**2*rho**3*thetaa**2 + 2100*df(y1,t)*y1*y5*betas*c1**2*
+phi*rho**3*thetaa*(1400*c2*thetaa + 5878621*thetaa - 100) + 2100*df(y1,t)*y1*betas*c1**2*rho**3*thetaa*( - 700
+*c2**2*thetaa - 5878621*c2*thetaa + 100*c2 - 12342208879*thetaa + 419900) + 1470000*df(y1,t)*y3**3*y4**2*betas
+*rho*thetaa**2*(gammah + nu) - 2940000*df(y1,t)*y3**3*y4*betas*c1*rho**2*thetaa**2*(gammah + nu) + 1470000*df(
+y1,t)*y3**3*betas*c1**2*rho**3*thetaa**2*(gammah + nu) + 2940000*df(y1,t)*y3**2*y4**2*y5*betas*phi*rho*thetaa
+**2*(gammah + nu) + 1400*df(y1,t)*y3**2*y4**2*betas*rho*thetaa*( - 2100*c2*gammah*thetaa - 2100*c2*nu*thetaa +
+ 1050*gammah*phi - 8817963*gammah*thetaa + 100*gammah + 1050*nu*phi - 8817963*nu*thetaa + 100*nu) - 5880000*df
+(y1,t)*y3**2*y4*y5*betas*c1*phi*rho**2*thetaa**2*(gammah + nu) + 2800*df(y1,t)*y3**2*y4*betas*c1*rho**2*thetaa
+*(2100*c2*gammah*thetaa + 2100*c2*nu*thetaa - 1050*gammah*phi + 8817963*gammah*thetaa - 100*gammah - 1050*nu*
+phi + 8817963*nu*thetaa - 100*nu) + 2940000*df(y1,t)*y3**2*y5*betas*c1**2*phi*rho**3*thetaa**2*(gammah + nu) +
+ 1400*df(y1,t)*y3**2*betas*c1**2*rho**3*thetaa*( - 2100*c2*gammah*thetaa - 2100*c2*nu*thetaa + 1050*gammah*phi
+ - 8817963*gammah*thetaa + 100*gammah + 1050*nu*phi - 8817963*nu*thetaa + 100*nu) + 1470000*df(y1,t)*y3*y4**2*
+y5**2*betas*phi**2*rho*thetaa**2*(gammah + nu) + 1400*df(y1,t)*y3*y4**2*y5*betas*phi*rho*thetaa*( - 2100*c2*
+gammah*thetaa - 2100*c2*nu*thetaa - 8817963*gammah*thetaa + 100*gammah - 8817963*nu*thetaa + 100*nu) + df(y1,t
+)*y3*y4**2*betas*rho*(1470000*c2**2*gammah*thetaa**2 + 1470000*c2**2*nu*thetaa**2 + 12345148200*c2*gammah*
+thetaa**2 - 140000*c2*gammah*thetaa + 12345148200*c2*nu*thetaa**2 - 140000*c2*nu*thetaa + 25918823823123*
+gammah*thetaa**2 - 587864200*gammah*thetaa - 10000*gammah + 25918823823123*nu*thetaa**2 - 587864200*nu*thetaa 
+- 10000*nu) - 2940000*df(y1,t)*y3*y4*y5**2*betas*c1*phi**2*rho**2*thetaa**2*(gammah + nu) + 2800*df(y1,t)*y3*
+y4*y5*betas*c1*phi*rho**2*thetaa*(2100*c2*gammah*thetaa + 2100*c2*nu*thetaa + 8817963*gammah*thetaa - 100*
+gammah + 8817963*nu*thetaa - 100*nu) + 2*df(y1,t)*y3*y4*betas*c1*rho**2*( - 1470000*c2**2*gammah*thetaa**2 - 
+1470000*c2**2*nu*thetaa**2 - 12345148200*c2*gammah*thetaa**2 + 140000*c2*gammah*thetaa - 12345148200*c2*nu*
+thetaa**2 + 140000*c2*nu*thetaa - 25918823823123*gammah*thetaa**2 + 587864200*gammah*thetaa + 10000*gammah - 
+25918823823123*nu*thetaa**2 + 587864200*nu*thetaa + 10000*nu) + 1470000*df(y1,t)*y3*y5**2*betas*c1**2*phi**2*
+rho**3*thetaa**2*(gammah + nu) + 1400*df(y1,t)*y3*y5*betas*c1**2*phi*rho**3*thetaa*( - 2100*c2*gammah*thetaa -
+ 2100*c2*nu*thetaa - 8817963*gammah*thetaa + 100*gammah - 8817963*nu*thetaa + 100*nu) + df(y1,t)*y3*betas*c1**
+2*rho**3*(1470000*c2**2*gammah*thetaa**2 + 1470000*c2**2*nu*thetaa**2 + 12345148200*c2*gammah*thetaa**2 - 
+140000*c2*gammah*thetaa + 12345148200*c2*nu*thetaa**2 - 140000*c2*nu*thetaa + 25918823823123*gammah*thetaa**2 
+- 587864200*gammah*thetaa - 10000*gammah + 25918823823123*nu*thetaa**2 - 587864200*nu*thetaa - 10000*nu) + 
+490000*df(y3,t)**2*y1**3*rho*thetaa*(14*betas + 1) + 70000*df(y3,t)**2*y1**2*y4*rho*thetaa*(21*betas + 1) + 
+70000*df(y3,t)**2*y1**2*c1*rho**2*thetaa*( - 21*betas - 1) + 70000*df(y3,t)**2*y1*y4**2*betas*rho*thetaa - 
+140000*df(y3,t)**2*y1*y4*betas*c1*rho**2*thetaa + 70000*df(y3,t)**2*y1*betas*c1**2*rho**3*thetaa + 490000*df(
+y3,t)*y1**3*y3**2*rho*thetaa**2*(14*betas + 1) + 980000*df(y3,t)*y1**3*y3*y5*phi*rho*thetaa**2*(14*betas + 1) 
++ 4900*df(y3,t)*y1**3*y3*rho*thetaa*( - 2800*betas*c2*thetaa + 1400*betas*gammah + 1400*betas*nu + 1400*betas*
+phi - 11757284*betas*thetaa + 200*betas - 200*c2*thetaa + 100*nu + 100*phi - 839806*thetaa + 3) + 490000*df(y3
+,t)*y1**3*y5**2*phi**2*rho*thetaa**2*(14*betas + 1) + 4900*df(y3,t)*y1**3*y5*phi*rho*thetaa*( - 2800*betas*c2*
+thetaa - 11757284*betas*thetaa + 200*betas - 200*c2*thetaa - 100*gammah - 839806*thetaa + 3) + 49*df(y3,t)*y1
+**3*rho*thetaa*(140000*betas*c2**2*thetaa + 1175728400*betas*c2*thetaa - 20000*betas*c2 + 2468459411726*betas*
+thetaa - 83980600*betas + 10000*c2**2*thetaa + 10000*c2*gammah + 83980600*c2*thetaa - 300*c2 + 41990000*gammah
+ + 176318529409*thetaa - 1259709) + 70000*df(y3,t)*y1**2*y3**2*y4*rho*thetaa**2*(21*betas + 1) + 70000*df(y3,t
+)*y1**2*y3**2*c1*rho**2*thetaa**2*( - 21*betas - 1) + 140000*df(y3,t)*y1**2*y3*y4*y5*phi*rho*thetaa**2*(21*
+betas + 1) + 100*df(y3,t)*y1**2*y3*y4*rho*thetaa*( - 29400*betas*c2*thetaa + 14700*betas*gammah + 14700*betas*
+nu + 14700*betas*phi - 123451482*betas*thetaa + 2800*betas - 1400*c2*thetaa + 700*nu + 700*phi - 5878642*
+thetaa + 121) + 140000*df(y3,t)*y1**2*y3*y5*c1*phi*rho**2*thetaa**2*( - 21*betas - 1) + 100*df(y3,t)*y1**2*y3*
+c1*rho**2*thetaa*(29400*betas*c2*thetaa - 14700*betas*gammah - 14700*betas*nu - 14700*betas*phi + 123451482*
+betas*thetaa - 2800*betas + 1400*c2*thetaa - 700*nu - 700*phi + 5878642*thetaa - 121) + 70000*df(y3,t)*y1**2*
+y4*y5**2*phi**2*rho*thetaa**2*(21*betas + 1) + 100*df(y3,t)*y1**2*y4*y5*phi*rho*thetaa*( - 29400*betas*c2*
+thetaa - 123451482*betas*thetaa + 2800*betas - 1400*c2*thetaa - 700*gammah - 5878642*thetaa + 121) + df(y3,t)*
+y1**2*y4*rho*(1470000*betas*c2**2*thetaa**2 + 12345148200*betas*c2*thetaa**2 - 280000*betas*c2*thetaa + 
+25918823823123*betas*thetaa**2 - 1175728400*betas*thetaa + 10000*betas + 70000*c2**2*thetaa**2 + 70000*c2*
+gammah*thetaa + 587864200*c2*thetaa**2 - 12100*c2*thetaa + 293930000*gammah*thetaa + 1234229705863*thetaa**2 -
+ 50808263*thetaa + 300) + 70000*df(y3,t)*y1**2*y5**2*c1*phi**2*rho**2*thetaa**2*( - 21*betas - 1) + 100*df(y3,
+t)*y1**2*y5*c1*phi*rho**2*thetaa*(29400*betas*c2*thetaa + 123451482*betas*thetaa - 2800*betas + 1400*c2*thetaa
+ + 700*gammah + 5878642*thetaa - 121) + df(y3,t)*y1**2*c1*rho**2*( - 1470000*betas*c2**2*thetaa**2 - 
+12345148200*betas*c2*thetaa**2 + 280000*betas*c2*thetaa - 25918823823123*betas*thetaa**2 + 1175728400*betas*
+thetaa - 10000*betas - 70000*c2**2*thetaa**2 - 70000*c2*gammah*thetaa - 587864200*c2*thetaa**2 + 12100*c2*
+thetaa - 293930000*gammah*thetaa - 1234229705863*thetaa**2 + 50808263*thetaa - 300) + 70000*df(y3,t)*y1*y3**2*
+y4**2*betas*rho*thetaa**2 - 140000*df(y3,t)*y1*y3**2*y4*betas*c1*rho**2*thetaa**2 + 70000*df(y3,t)*y1*y3**2*
+betas*c1**2*rho**3*thetaa**2 + 140000*df(y3,t)*y1*y3*y4**2*y5*betas*phi*rho*thetaa**2 + 200*df(y3,t)*y1*y3*y4
+**2*betas*rho*thetaa*( - 700*c2*thetaa + 350*gammah + 350*nu + 350*phi - 2939321*thetaa + 50) - 280000*df(y3,t
+)*y1*y3*y4*y5*betas*c1*phi*rho**2*thetaa**2 + 400*df(y3,t)*y1*y3*y4*betas*c1*rho**2*thetaa*(700*c2*thetaa - 
+350*gammah - 350*nu - 350*phi + 2939321*thetaa - 50) + 140000*df(y3,t)*y1*y3*y5*betas*c1**2*phi*rho**3*thetaa
+**2 + 200*df(y3,t)*y1*y3*betas*c1**2*rho**3*thetaa*( - 700*c2*thetaa + 350*gammah + 350*nu + 350*phi - 2939321
+*thetaa + 50) + 70000*df(y3,t)*y1*y4**2*y5**2*betas*phi**2*rho*thetaa**2 + 200*df(y3,t)*y1*y4**2*y5*betas*phi*
+rho*thetaa*( - 700*c2*thetaa - 2939321*thetaa + 50) + df(y3,t)*y1*y4**2*betas*rho*thetaa*(70000*c2**2*thetaa +
+ 587864200*c2*thetaa - 10000*c2 + 1234229705863*thetaa - 41990300) - 140000*df(y3,t)*y1*y4*y5**2*betas*c1*phi
+**2*rho**2*thetaa**2 + 400*df(y3,t)*y1*y4*y5*betas*c1*phi*rho**2*thetaa*(700*c2*thetaa + 2939321*thetaa - 50) 
++ 2*df(y3,t)*y1*y4*betas*c1*rho**2*thetaa*( - 70000*c2**2*thetaa - 587864200*c2*thetaa + 10000*c2 - 
+1234229705863*thetaa + 41990300) + 70000*df(y3,t)*y1*y5**2*betas*c1**2*phi**2*rho**3*thetaa**2 + 200*df(y3,t)*
+y1*y5*betas*c1**2*phi*rho**3*thetaa*( - 700*c2*thetaa - 2939321*thetaa + 50) + df(y3,t)*y1*betas*c1**2*rho**3*
+thetaa*(70000*c2**2*thetaa + 587864200*c2*thetaa - 10000*c2 + 1234229705863*thetaa - 41990300) + 490000*y1**4*
+y3**2*rho*thetaa**2*( - 14*betas - 1) + 980000*y1**4*y3*y5*phi*rho*thetaa**2*( - 14*betas - 1) + 4900*y1**4*y3
+*rho*thetaa*(2800*betas*c2*thetaa + 11757242*betas*thetaa - 200*betas + 200*c2*thetaa + 839803*thetaa - 3) + 
+490000*y1**4*y5**2*phi**2*rho*thetaa**2*( - 14*betas - 1) + 4900*y1**4*y5*phi*rho*thetaa*(2800*betas*c2*thetaa
+ + 11757242*betas*thetaa - 200*betas + 200*c2*thetaa + 839803*thetaa - 3) + 4900*y1**4*rho*thetaa*( - 1400*
+betas*c2**2*thetaa - 11757242*betas*c2*thetaa + 200*betas*c2 - 24684417758*betas*thetaa + 839800*betas - 100*
+c2**2*thetaa - 839803*c2*thetaa + 3*c2 - 1763172697*thetaa + 12597) + 490000*y1**3*y3**3*rho*thetaa**2*(14*
+betas*gammah + 14*betas*nu + gammah + nu) + 70000*y1**3*y3**2*y4*rho*thetaa**2*( - 21*betas - 1) + 980000*y1**
+3*y3**2*y5*phi*rho*thetaa**2*(14*betas*gammah + 14*betas*nu + gammah + nu) + 700*y1**3*y3**2*rho*thetaa*(2100*
+betas*c1*rho*thetaa - 19600*betas*c2*gammah*thetaa - 19600*betas*c2*nu*thetaa + 9800*betas*gammah*phi - 
+82300988*betas*gammah*thetaa + 1400*betas*gammah + 9800*betas*nu*phi - 82300988*betas*nu*thetaa + 1400*betas*
+nu + 100*c1*rho*thetaa - 1400*c2*gammah*thetaa - 1400*c2*nu*thetaa + 700*gammah*phi - 5878642*gammah*thetaa + 
+21*gammah + 700*nu*phi - 5878642*nu*thetaa + 21*nu) + 140000*y1**3*y3*y4*y5*phi*rho*thetaa**2*( - 21*betas - 1
+) + 700*y1**3*y3*y4*thetaa*(100*betae*rho - 300*betae + 4200*betas*c2*rho*thetaa + 17635863*betas*rho*thetaa -
+ 400*betas*rho + 200*c2*rho*thetaa + 839803*rho*thetaa - 3*rho) + 490000*y1**3*y3*y5**2*phi**2*rho*thetaa**2*(
+14*betas*gammah + 14*betas*nu + gammah + nu) + 700*y1**3*y3*y5*phi*rho*thetaa*(4200*betas*c1*rho*thetaa - 
+19600*betas*c2*gammah*thetaa - 19600*betas*c2*nu*thetaa - 82300988*betas*gammah*thetaa + 1400*betas*gammah - 
+82300988*betas*nu*thetaa + 1400*betas*nu + 200*c1*rho*thetaa - 1400*c2*gammah*thetaa - 1400*c2*nu*thetaa - 
+5878642*gammah*thetaa + 21*gammah - 5878642*nu*thetaa + 21*nu) + 7*y1**3*y3*rho*thetaa*( - 10000*betae*c1*rho 
++ 30000*betae*c1 - 420000*betas*c1*c2*rho*thetaa - 1763586300*betas*c1*rho*thetaa + 40000*betas*c1*rho + 
+980000*betas*c2**2*gammah*thetaa + 980000*betas*c2**2*nu*thetaa + 8230098800*betas*c2*gammah*thetaa - 140000*
+betas*c2*gammah + 8230098800*betas*c2*nu*thetaa - 140000*betas*c2*nu + 17279215882082*betas*gammah*thetaa - 
+587864200*betas*gammah + 17279215882082*betas*nu*thetaa - 587864200*betas*nu - 20000*c1*c2*rho*thetaa - 
+83980300*c1*rho*thetaa + 300*c1*rho + 70000*c2**2*gammah*thetaa + 70000*c2**2*nu*thetaa + 587864200*c2*gammah*
+thetaa - 2100*c2*gammah + 587864200*c2*nu*thetaa - 2100*c2*nu + 1234229705863*gammah*thetaa - 8817963*gammah +
+ 1234229705863*nu*thetaa - 8817963*nu) + 70000*y1**3*y4*y5**2*phi**2*rho*thetaa**2*( - 21*betas - 1) + 700*y1
+**3*y4*y5*phi*thetaa*(100*betae*rho - 300*betae + 4200*betas*c2*rho*thetaa + 17635863*betas*rho*thetaa - 400*
+betas*rho + 200*c2*rho*thetaa + 839803*rho*thetaa - 3*rho) + 700*y1**3*y4*thetaa*( - 100*betae*c2*rho + 300*
+betae*c2 - 419900*betae*rho + 1259700*betae - 2100*betas*c2**2*rho*thetaa - 17635863*betas*c2*rho*thetaa + 400
+*betas*c2*rho - 37026626637*betas*rho*thetaa + 1679600*betas*rho - 100*c2**2*rho*thetaa - 839803*c2*rho*thetaa
+ + 3*c2*rho - 1763172697*rho*thetaa + 12597*rho) + 70000*y1**3*y5**2*c1*phi**2*rho**2*thetaa**2*(21*betas + 1)
+ + 700*y1**3*y5*c1*phi*rho*thetaa*( - 100*betae*rho + 300*betae - 4200*betas*c2*rho*thetaa - 17635863*betas*
+rho*thetaa + 400*betas*rho - 200*c2*rho*thetaa - 839803*rho*thetaa + 3*rho) + 700*y1**3*c1*rho*thetaa*(100*
+betae*c2*rho - 300*betae*c2 + 419900*betae*rho - 1259700*betae + 2100*betas*c2**2*rho*thetaa + 17635863*betas*
+c2*rho*thetaa - 400*betas*c2*rho + 37026626637*betas*rho*thetaa - 1679600*betas*rho + 100*c2**2*rho*thetaa + 
+839803*c2*rho*thetaa - 3*c2*rho + 1763172697*rho*thetaa - 12597*rho) + 70000*y1**2*y3**3*y4*rho*thetaa**2*(21*
+betas*gammah + 21*betas*nu + gammah + nu) + 70000*y1**2*y3**3*c1*rho**2*thetaa**2*( - 21*betas*gammah - 21*
+betas*nu - gammah - nu) - 70000*y1**2*y3**2*y4**2*betas*rho*thetaa**2 + 140000*y1**2*y3**2*y4*y5*phi*rho*
+thetaa**2*(21*betas*gammah + 21*betas*nu + gammah + nu) + 100*y1**2*y3**2*y4*rho*thetaa*(1400*betas*c1*rho*
+thetaa - 29400*betas*c2*gammah*thetaa - 29400*betas*c2*nu*thetaa + 14700*betas*gammah*phi - 123451482*betas*
+gammah*thetaa + 2800*betas*gammah + 14700*betas*nu*phi - 123451482*betas*nu*thetaa + 2800*betas*nu - 1400*c2*
+gammah*thetaa - 1400*c2*nu*thetaa + 700*gammah*phi - 5878642*gammah*thetaa + 21*gammah + 700*nu*phi - 5878642*
+nu*thetaa + 121*nu) + 140000*y1**2*y3**2*y5*c1*phi*rho**2*thetaa**2*( - 21*betas*gammah - 21*betas*nu - gammah
+ - nu) + 100*y1**2*y3**2*c1*rho**2*thetaa*( - 700*betas*c1*rho*thetaa + 29400*betas*c2*gammah*thetaa + 29400*
+betas*c2*nu*thetaa - 14700*betas*gammah*phi + 123451482*betas*gammah*thetaa - 2800*betas*gammah - 14700*betas*
+nu*phi + 123451482*betas*nu*thetaa - 2800*betas*nu + 1400*c2*gammah*thetaa + 1400*c2*nu*thetaa - 700*gammah*
+phi + 5878642*gammah*thetaa - 21*gammah - 700*nu*phi + 5878642*nu*thetaa - 121*nu) - 140000*y1**2*y3*y4**2*y5*
+betas*phi*rho*thetaa**2 + 100*y1**2*y3*y4**2*betas*rho*thetaa*(1400*c2*thetaa + 5878621*thetaa - 100) + 70000*
+y1**2*y3*y4*y5**2*phi**2*rho*thetaa**2*(21*betas*gammah + 21*betas*nu + gammah + nu) + 100*y1**2*y3*y4*y5*phi*
+rho*thetaa*(2800*betas*c1*rho*thetaa - 29400*betas*c2*gammah*thetaa - 29400*betas*c2*nu*thetaa - 123451482*
+betas*gammah*thetaa + 2800*betas*gammah - 123451482*betas*nu*thetaa + 2800*betas*nu - 1400*c2*gammah*thetaa - 
+1400*c2*nu*thetaa - 5878642*gammah*thetaa + 21*gammah - 5878642*nu*thetaa + 121*nu) + y1**2*y3*y4*rho*( - 
+280000*betas*c1*c2*rho*thetaa**2 - 1175724200*betas*c1*rho*thetaa**2 + 20000*betas*c1*rho*thetaa + 1470000*
+betas*c2**2*gammah*thetaa**2 + 1470000*betas*c2**2*nu*thetaa**2 + 12345148200*betas*c2*gammah*thetaa**2 - 
+280000*betas*c2*gammah*thetaa + 12345148200*betas*c2*nu*thetaa**2 - 280000*betas*c2*nu*thetaa + 25918823823123
+*betas*gammah*thetaa**2 - 1175728400*betas*gammah*thetaa + 10000*betas*gammah + 25918823823123*betas*nu*thetaa
+**2 - 1175728400*betas*nu*thetaa + 10000*betas*nu + 70000*c2**2*gammah*thetaa**2 + 70000*c2**2*nu*thetaa**2 + 
+587864200*c2*gammah*thetaa**2 - 2100*c2*gammah*thetaa + 587864200*c2*nu*thetaa**2 - 12100*c2*nu*thetaa + 
+1234229705863*gammah*thetaa**2 - 8818263*gammah*thetaa + 300*gammah + 1234229705863*nu*thetaa**2 - 50808263*nu
+*thetaa + 300*nu) + 70000*y1**2*y3*y5**2*c1*phi**2*rho**2*thetaa**2*( - 21*betas*gammah - 21*betas*nu - gammah
+ - nu) + 100*y1**2*y3*y5*c1*phi*rho**2*thetaa*( - 1400*betas*c1*rho*thetaa + 29400*betas*c2*gammah*thetaa + 
+29400*betas*c2*nu*thetaa + 123451482*betas*gammah*thetaa - 2800*betas*gammah + 123451482*betas*nu*thetaa - 
+2800*betas*nu + 1400*c2*gammah*thetaa + 1400*c2*nu*thetaa + 5878642*gammah*thetaa - 21*gammah + 5878642*nu*
+thetaa - 121*nu) + y1**2*y3*c1*rho**2*(140000*betas*c1*c2*rho*thetaa**2 + 587862100*betas*c1*rho*thetaa**2 - 
+10000*betas*c1*rho*thetaa - 1470000*betas*c2**2*gammah*thetaa**2 - 1470000*betas*c2**2*nu*thetaa**2 - 
+12345148200*betas*c2*gammah*thetaa**2 + 280000*betas*c2*gammah*thetaa - 12345148200*betas*c2*nu*thetaa**2 + 
+280000*betas*c2*nu*thetaa - 25918823823123*betas*gammah*thetaa**2 + 1175728400*betas*gammah*thetaa - 10000*
+betas*gammah - 25918823823123*betas*nu*thetaa**2 + 1175728400*betas*nu*thetaa - 10000*betas*nu - 70000*c2**2*
+gammah*thetaa**2 - 70000*c2**2*nu*thetaa**2 - 587864200*c2*gammah*thetaa**2 + 2100*c2*gammah*thetaa - 
+587864200*c2*nu*thetaa**2 + 12100*c2*nu*thetaa - 1234229705863*gammah*thetaa**2 + 8818263*gammah*thetaa - 300*
+gammah - 1234229705863*nu*thetaa**2 + 50808263*nu*thetaa - 300*nu) - 70000*y1**2*y4**2*y5**2*betas*phi**2*rho*
+thetaa**2 + 100*y1**2*y4**2*y5*betas*phi*rho*thetaa*(1400*c2*thetaa + 5878621*thetaa - 100) + 100*y1**2*y4**2*
+betas*rho*thetaa*( - 700*c2**2*thetaa - 5878621*c2*thetaa + 100*c2 - 12342208879*thetaa + 419900) + 140000*y1
+**2*y4*y5**2*betas*c1*phi**2*rho**2*thetaa**2 + 200*y1**2*y4*y5*betas*c1*phi*rho**2*thetaa*( - 1400*c2*thetaa 
+- 5878621*thetaa + 100) + 200*y1**2*y4*betas*c1*rho**2*thetaa*(700*c2**2*thetaa + 5878621*c2*thetaa - 100*c2 +
+ 12342208879*thetaa - 419900) - 70000*y1**2*y5**2*betas*c1**2*phi**2*rho**3*thetaa**2 + 100*y1**2*y5*betas*c1
+**2*phi*rho**3*thetaa*(1400*c2*thetaa + 5878621*thetaa - 100) + 100*y1**2*betas*c1**2*rho**3*thetaa*( - 700*c2
+**2*thetaa - 5878621*c2*thetaa + 100*c2 - 12342208879*thetaa + 419900) + 70000*y1*y3**3*y4**2*betas*rho*thetaa
+**2*(gammah + nu) - 140000*y1*y3**3*y4*betas*c1*rho**2*thetaa**2*(gammah + nu) + 70000*y1*y3**3*betas*c1**2*
+rho**3*thetaa**2*(gammah + nu) + 140000*y1*y3**2*y4**2*y5*betas*phi*rho*thetaa**2*(gammah + nu) + 200*y1*y3**2
+*y4**2*betas*rho*thetaa*( - 700*c2*gammah*thetaa - 700*c2*nu*thetaa + 350*gammah*phi - 2939321*gammah*thetaa +
+ 50*gammah + 350*nu*phi - 2939321*nu*thetaa + 50*nu) - 280000*y1*y3**2*y4*y5*betas*c1*phi*rho**2*thetaa**2*(
+gammah + nu) + 400*y1*y3**2*y4*betas*c1*rho**2*thetaa*(700*c2*gammah*thetaa + 700*c2*nu*thetaa - 350*gammah*
+phi + 2939321*gammah*thetaa - 50*gammah - 350*nu*phi + 2939321*nu*thetaa - 50*nu) + 140000*y1*y3**2*y5*betas*
+c1**2*phi*rho**3*thetaa**2*(gammah + nu) + 200*y1*y3**2*betas*c1**2*rho**3*thetaa*( - 700*c2*gammah*thetaa - 
+700*c2*nu*thetaa + 350*gammah*phi - 2939321*gammah*thetaa + 50*gammah + 350*nu*phi - 2939321*nu*thetaa + 50*nu
+) + 70000*y1*y3*y4**2*y5**2*betas*phi**2*rho*thetaa**2*(gammah + nu) + 200*y1*y3*y4**2*y5*betas*phi*rho*thetaa
+*( - 700*c2*gammah*thetaa - 700*c2*nu*thetaa - 2939321*gammah*thetaa + 50*gammah - 2939321*nu*thetaa + 50*nu) 
++ y1*y3*y4**2*betas*rho*thetaa*(70000*c2**2*gammah*thetaa + 70000*c2**2*nu*thetaa + 587864200*c2*gammah*thetaa
+ - 10000*c2*gammah + 587864200*c2*nu*thetaa - 10000*c2*nu + 1234229705863*gammah*thetaa - 41990300*gammah + 
+1234229705863*nu*thetaa - 41990300*nu) - 140000*y1*y3*y4*y5**2*betas*c1*phi**2*rho**2*thetaa**2*(gammah + nu) 
++ 400*y1*y3*y4*y5*betas*c1*phi*rho**2*thetaa*(700*c2*gammah*thetaa + 700*c2*nu*thetaa + 2939321*gammah*thetaa 
+- 50*gammah + 2939321*nu*thetaa - 50*nu) + 2*y1*y3*y4*betas*c1*rho**2*thetaa*( - 70000*c2**2*gammah*thetaa - 
+70000*c2**2*nu*thetaa - 587864200*c2*gammah*thetaa + 10000*c2*gammah - 587864200*c2*nu*thetaa + 10000*c2*nu - 
+1234229705863*gammah*thetaa + 41990300*gammah - 1234229705863*nu*thetaa + 41990300*nu) + 70000*y1*y3*y5**2*
+betas*c1**2*phi**2*rho**3*thetaa**2*(gammah + nu) + 200*y1*y3*y5*betas*c1**2*phi*rho**3*thetaa*( - 700*c2*
+gammah*thetaa - 700*c2*nu*thetaa - 2939321*gammah*thetaa + 50*gammah - 2939321*nu*thetaa + 50*nu) + y1*y3*
+betas*c1**2*rho**3*thetaa*(70000*c2**2*gammah*thetaa + 70000*c2**2*nu*thetaa + 587864200*c2*gammah*thetaa - 
+10000*c2*gammah + 587864200*c2*nu*thetaa - 10000*c2*nu + 1234229705863*gammah*thetaa - 41990300*gammah + 
+1234229705863*nu*thetaa - 41990300*nu)
+
+
+aa_(6) :=  - x2*rho + 14*y1
+
+
+aa_(7) := 137200*df(y1,t,2)*df(y3,t)*y1*betas*rho + 9800*df(y1,t,2)*df(y3,t)*y4*betas*rho - 9800*df(y1,t,2)*df
+(y3,t)*betas*c1*rho**2 - 137200*df(y1,t,2)*x3*y1*y3*betae*rho*thetaa - 137200*df(y1,t,2)*x3*y1*y5*betae*phi*
+rho*thetaa + 137200*df(y1,t,2)*x3*y1*betae*rho*thetaa*(c2 + 4199) - 9800*df(y1,t,2)*x3*y3*y4*betae*rho*thetaa 
++ 9800*df(y1,t,2)*x3*y3*betae*c1*rho**2*thetaa - 9800*df(y1,t,2)*x3*y4*y5*betae*phi*rho*thetaa + 9800*df(y1,t,
+2)*x3*y4*betae*rho*thetaa*(c2 + 4199) + 9800*df(y1,t,2)*x3*y5*betae*c1*phi*rho**2*thetaa + 9800*df(y1,t,2)*x3*
+betae*c1*rho**2*thetaa*( - c2 - 4199) - 1920800*df(y1,t,2)*y1**2*y3*betae*thetaa - 1920800*df(y1,t,2)*y1**2*y5
+*betae*phi*thetaa + 1920800*df(y1,t,2)*y1**2*betae*thetaa*(c2 + 4199) - 137200*df(y1,t,2)*y1*y3*y4*betae*
+thetaa + 137200*df(y1,t,2)*y1*y3*rho*(betae*c1*thetaa + betas*gammah + betas*nu) - 137200*df(y1,t,2)*y1*y4*y5*
+betae*phi*thetaa + 137200*df(y1,t,2)*y1*y4*betae*thetaa*(c2 + 4199) + 137200*df(y1,t,2)*y1*y5*betae*c1*phi*rho
+*thetaa + 137200*df(y1,t,2)*y1*betae*c1*rho*thetaa*( - c2 - 4199) + 9800*df(y1,t,2)*y3*y4*betas*rho*(gammah + 
+nu) - 9800*df(y1,t,2)*y3*betas*c1*rho**2*(gammah + nu) - 137200*df(y1,t)**2*df(y3,t)*y3*rho*thetaa - 137200*df
+(y1,t)**2*df(y3,t)*y5*phi*rho*thetaa + 1372*df(y1,t)**2*df(y3,t)*rho*( - 100*betas + 100*c2*thetaa + 419903*
+thetaa - 3) + 137200*df(y1,t)**2*x3*y3*betae*rho*thetaa + 137200*df(y1,t)**2*x3*y5*betae*phi*rho*thetaa + 
+137200*df(y1,t)**2*x3*betae*rho*thetaa*( - c2 - 4199) + 3841600*df(y1,t)**2*y1*y3*betae*thetaa + 3841600*df(y1
+,t)**2*y1*y5*betae*phi*thetaa + 3841600*df(y1,t)**2*y1*betae*thetaa*( - c2 - 4199) - 137200*df(y1,t)**2*y3**2*
+nu*rho*thetaa + 137200*df(y1,t)**2*y3*y4*betae*thetaa - 137200*df(y1,t)**2*y3*y5*nu*phi*rho*thetaa + 1372*df(
+y1,t)**2*y3*rho*( - 100*betae*c1*thetaa - 100*betas*gammah - 100*betas*nu + 100*c2*nu*thetaa + 3*gammah*thetaa
+ - 3*gammah + 419903*nu*thetaa - 3*nu) + 137200*df(y1,t)**2*y4*y5*betae*phi*thetaa + 137200*df(y1,t)**2*y4*
+betae*thetaa*( - c2 - 4199) - 137200*df(y1,t)**2*y5*betae*c1*phi*rho*thetaa + 137200*df(y1,t)**2*betae*c1*rho*
+thetaa*(c2 + 4199) + 19600*df(y1,t)*df(y3,t)*y1*y3*rho*thetaa*( - 7*betas - 1) + 19600*df(y1,t)*df(y3,t)*y1*y5
+*phi*rho*thetaa*( - 7*betas - 1) + 196*df(y1,t)*df(y3,t)*y1*rho*(700*betas*c2*thetaa + 2939321*betas*thetaa - 
+50*betas + 100*c2*thetaa + 419903*thetaa - 3) - 9800*df(y1,t)*df(y3,t)*y3*y4*betas*rho*thetaa + 9800*df(y1,t)*
+df(y3,t)*y3*betas*c1*rho**2*thetaa - 9800*df(y1,t)*df(y3,t)*y4*y5*betas*phi*rho*thetaa + 14*df(y1,t)*df(y3,t)*
+y4*betas*rho*(700*c2*thetaa + 2939321*thetaa + 50) + 9800*df(y1,t)*df(y3,t)*y5*betas*c1*phi*rho**2*thetaa + 14
+*df(y1,t)*df(y3,t)*betas*c1*rho**2*( - 700*c2*thetaa - 2939321*thetaa - 50) - 9800*df(y1,t)*x3*y1*y3*betae*rho
+*thetaa - 9800*df(y1,t)*x3*y1*y5*betae*phi*rho*thetaa + 9800*df(y1,t)*x3*y1*betae*rho*thetaa*(c2 + 4199) - 
+2100*df(y1,t)*x3*y3*y4*betae*rho*thetaa + 2100*df(y1,t)*x3*y3*betae*c1*rho**2*thetaa - 2100*df(y1,t)*x3*y4*y5*
+betae*phi*rho*thetaa + 2100*df(y1,t)*x3*y4*betae*rho*thetaa*(c2 + 4199) + 2100*df(y1,t)*x3*y5*betae*c1*phi*rho
+**2*thetaa + 2100*df(y1,t)*x3*betae*c1*rho**2*thetaa*( - c2 - 4199) + 137200*df(y1,t)*y1**2*y3*thetaa*( - 
+betae*rho + 3*betae + betas*rho) + 137200*df(y1,t)*y1**2*y5*phi*thetaa*( - betae*rho + 3*betae + betas*rho) + 
+137200*df(y1,t)*y1**2*thetaa*(betae*c2*rho - 3*betae*c2 + 4199*betae*rho - 12597*betae - betas*c2*rho - 4199*
+betas*rho) + 19600*df(y1,t)*y1*y3**2*rho*thetaa*( - 7*betas*gammah - 7*betas*nu - nu) + 9800*df(y1,t)*y1*y3*y4
+*thetaa*( - betae*rho + betae + betas*rho) + 19600*df(y1,t)*y1*y3*y5*phi*rho*thetaa*( - 7*betas*gammah - 7*
+betas*nu - nu) + 196*df(y1,t)*y1*y3*rho*(50*betae*c1*rho*thetaa - 50*betae*c1*thetaa - 50*betas*c1*rho*thetaa 
++ 700*betas*c2*gammah*thetaa + 700*betas*c2*nu*thetaa + 2939321*betas*gammah*thetaa - 50*betas*gammah + 
+2939321*betas*nu*thetaa - 50*betas*nu + 100*c2*nu*thetaa + 3*gammah*thetaa - 3*gammah + 419903*nu*thetaa - 3*
+nu) + 9800*df(y1,t)*y1*y4*y5*phi*thetaa*( - betae*rho + betae + betas*rho) + 9800*df(y1,t)*y1*y4*thetaa*(betae
+*c2*rho - betae*c2 + 4199*betae*rho - 4199*betae - betas*c2*rho - 4199*betas*rho) + 9800*df(y1,t)*y1*y5*c1*phi
+*rho*thetaa*(betae*rho - betae - betas*rho) + 9800*df(y1,t)*y1*c1*rho*thetaa*( - betae*c2*rho + betae*c2 - 
+4199*betae*rho + 4199*betae + betas*c2*rho + 4199*betas*rho) - 9800*df(y1,t)*y3**2*y4*betas*rho*thetaa*(gammah
+ + nu) + 9800*df(y1,t)*y3**2*betas*c1*rho**2*thetaa*(gammah + nu) - 9800*df(y1,t)*y3*y4*y5*betas*phi*rho*
+thetaa*(gammah + nu) + 14*df(y1,t)*y3*y4*betas*rho*(700*c2*gammah*thetaa + 700*c2*nu*thetaa + 2939321*gammah*
+thetaa + 50*gammah + 2939321*nu*thetaa + 50*nu) + 9800*df(y1,t)*y3*y5*betas*c1*phi*rho**2*thetaa*(gammah + nu)
+ + 14*df(y1,t)*y3*betas*c1*rho**2*( - 700*c2*gammah*thetaa - 700*c2*nu*thetaa - 2939321*gammah*thetaa - 50*
+gammah - 2939321*nu*thetaa - 50*nu) + 700*df(y3,t)*y1**2*y3*rho*thetaa*( - 14*betas - 1) + 700*df(y3,t)*y1**2*
+y5*phi*rho*thetaa*( - 14*betas - 1) + 7*df(y3,t)*y1**2*rho*(1400*betas*c2*thetaa + 5878642*betas*thetaa - 100*
+betas + 100*c2*thetaa + 419903*thetaa - 3) - 700*df(y3,t)*y1*y3*y4*betas*rho*thetaa + 700*df(y3,t)*y1*y3*betas
+*c1*rho**2*thetaa - 700*df(y3,t)*y1*y4*y5*betas*phi*rho*thetaa + 7*df(y3,t)*y1*y4*betas*rho*thetaa*(100*c2 + 
+419903) + 700*df(y3,t)*y1*y5*betas*c1*phi*rho**2*thetaa + 7*df(y3,t)*y1*betas*c1*rho**2*thetaa*( - 100*c2 - 
+419903) - 700*x3*y1**2*y3*betae*rho*thetaa - 700*x3*y1**2*y5*betae*phi*rho*thetaa + 700*x3*y1**2*betae*rho*
+thetaa*(c2 + 4199) - 100*x3*y1*y3*y4*betae*rho*thetaa + 100*x3*y1*y3*betae*c1*rho**2*thetaa - 100*x3*y1*y4*y5*
+betae*phi*rho*thetaa + 100*x3*y1*y4*betae*rho*thetaa*(c2 + 4199) + 100*x3*y1*y5*betae*c1*phi*rho**2*thetaa + 
+100*x3*y1*betae*c1*rho**2*thetaa*( - c2 - 4199) + 9800*y1**3*y3*thetaa*( - betae*rho + 2*betae + betas*rho) + 
+9800*y1**3*y5*phi*thetaa*( - betae*rho + 2*betae + betas*rho) + 9800*y1**3*thetaa*(betae*c2*rho - 2*betae*c2 +
+ 4199*betae*rho - 8398*betae - betas*c2*rho - 4199*betas*rho) + 700*y1**2*y3**2*rho*thetaa*( - 14*betas*gammah
+ - 14*betas*nu - nu) + 700*y1**2*y3*y4*thetaa*( - betae*rho + betae + betas*rho) + 700*y1**2*y3*y5*phi*rho*
+thetaa*( - 14*betas*gammah - 14*betas*nu - nu) + 7*y1**2*y3*rho*(100*betae*c1*rho*thetaa - 100*betae*c1*thetaa
+ - 100*betas*c1*rho*thetaa + 1400*betas*c2*gammah*thetaa + 1400*betas*c2*nu*thetaa + 5878642*betas*gammah*
+thetaa - 100*betas*gammah + 5878642*betas*nu*thetaa - 100*betas*nu + 100*c2*nu*thetaa + 3*gammah*thetaa - 3*
+gammah + 419903*nu*thetaa - 3*nu) + 700*y1**2*y4*y5*phi*thetaa*( - betae*rho + betae + betas*rho) + 700*y1**2*
+y4*thetaa*(betae*c2*rho - betae*c2 + 4199*betae*rho - 4199*betae - betas*c2*rho - 4199*betas*rho) + 700*y1**2*
+y5*c1*phi*rho*thetaa*(betae*rho - betae - betas*rho) + 700*y1**2*c1*rho*thetaa*( - betae*c2*rho + betae*c2 - 
+4199*betae*rho + 4199*betae + betas*c2*rho + 4199*betas*rho) - 700*y1*y3**2*y4*betas*rho*thetaa*(gammah + nu) 
++ 700*y1*y3**2*betas*c1*rho**2*thetaa*(gammah + nu) - 700*y1*y3*y4*y5*betas*phi*rho*thetaa*(gammah + nu) + 7*
+y1*y3*y4*betas*rho*thetaa*(100*c2*gammah + 100*c2*nu + 419903*gammah + 419903*nu) + 700*y1*y3*y5*betas*c1*phi*
+rho**2*thetaa*(gammah + nu) + 7*y1*y3*betas*c1*rho**2*thetaa*( - 100*c2*gammah - 100*c2*nu - 419903*gammah - 
+419903*nu)
+
+
+aa_(8) := df(y3,t) + x4*y3*thetaa + x4*y5*phi*thetaa + x4*thetaa*( - c2 - 4199) + y3*(gammah + nu)
+
+
+aa_(9) :=  - x5 + y3
+
+
+aa_(10) := 137200*df(y1,t,2)*df(y3,t)*y1*rho*( - betae + betas) + 9800*df(y1,t,2)*df(y3,t)*y4*rho*( - betae + 
+betas) + 9800*df(y1,t,2)*df(y3,t)*c1*rho**2*(betae - betas) + 137200*df(y1,t,2)*x6*y1*y3*betae*rho*thetaa + 
+137200*df(y1,t,2)*x6*y1*y5*betae*phi*rho*thetaa + 137200*df(y1,t,2)*x6*y1*betae*rho*thetaa*( - c2 - 4199) + 
+9800*df(y1,t,2)*x6*y3*y4*betae*rho*thetaa - 9800*df(y1,t,2)*x6*y3*betae*c1*rho**2*thetaa + 9800*df(y1,t,2)*x6*
+y4*y5*betae*phi*rho*thetaa + 9800*df(y1,t,2)*x6*y4*betae*rho*thetaa*( - c2 - 4199) - 9800*df(y1,t,2)*x6*y5*
+betae*c1*phi*rho**2*thetaa + 9800*df(y1,t,2)*x6*betae*c1*rho**2*thetaa*(c2 + 4199) - 1920800*df(y1,t,2)*y1**2*
+y3*betae*thetaa - 1920800*df(y1,t,2)*y1**2*y5*betae*phi*thetaa + 1920800*df(y1,t,2)*y1**2*betae*thetaa*(c2 + 
+4199) - 274400*df(y1,t,2)*y1*y3*y4*betae*thetaa + 137200*df(y1,t,2)*y1*y3*rho*(2*betae*c1*thetaa - betae*
+gammah - betae*nu + betas*gammah + betas*nu) - 274400*df(y1,t,2)*y1*y4*y5*betae*phi*thetaa + 274400*df(y1,t,2)
+*y1*y4*betae*thetaa*(c2 + 4199) + 274400*df(y1,t,2)*y1*y5*betae*c1*phi*rho*thetaa + 274400*df(y1,t,2)*y1*betae
+*c1*rho*thetaa*( - c2 - 4199) - 9800*df(y1,t,2)*y3*y4**2*betae*thetaa + 9800*df(y1,t,2)*y3*y4*rho*(2*betae*c1*
+thetaa - betae*gammah - betae*nu + betas*gammah + betas*nu) + 9800*df(y1,t,2)*y3*c1*rho**2*( - betae*c1*thetaa
+ + betae*gammah + betae*nu - betas*gammah - betas*nu) - 9800*df(y1,t,2)*y4**2*y5*betae*phi*thetaa + 9800*df(y1
+,t,2)*y4**2*betae*thetaa*(c2 + 4199) + 19600*df(y1,t,2)*y4*y5*betae*c1*phi*rho*thetaa + 19600*df(y1,t,2)*y4*
+betae*c1*rho*thetaa*( - c2 - 4199) - 9800*df(y1,t,2)*y5*betae*c1**2*phi*rho**2*thetaa + 9800*df(y1,t,2)*betae*
+c1**2*rho**2*thetaa*(c2 + 4199) - 137200*df(y1,t)**2*df(y3,t)*y3*rho*thetaa - 137200*df(y1,t)**2*df(y3,t)*y5*
+phi*rho*thetaa + 1372*df(y1,t)**2*df(y3,t)*rho*(100*betae - 100*betas + 100*c2*thetaa + 419903*thetaa - 3) - 
+137200*df(y1,t)**2*x6*y3*betae*rho*thetaa - 137200*df(y1,t)**2*x6*y5*betae*phi*rho*thetaa + 137200*df(y1,t)**2
+*x6*betae*rho*thetaa*(c2 + 4199) + 3841600*df(y1,t)**2*y1*y3*betae*thetaa + 3841600*df(y1,t)**2*y1*y5*betae*
+phi*thetaa + 3841600*df(y1,t)**2*y1*betae*thetaa*( - c2 - 4199) - 137200*df(y1,t)**2*y3**2*nu*rho*thetaa + 
+274400*df(y1,t)**2*y3*y4*betae*thetaa - 137200*df(y1,t)**2*y3*y5*nu*phi*rho*thetaa + 1372*df(y1,t)**2*y3*rho*(
+ - 200*betae*c1*thetaa + 100*betae*gammah + 100*betae*nu - 100*betas*gammah - 100*betas*nu + 100*c2*nu*thetaa 
++ 3*gammah*thetaa - 3*gammah + 419903*nu*thetaa - 3*nu) + 274400*df(y1,t)**2*y4*y5*betae*phi*thetaa + 274400*
+df(y1,t)**2*y4*betae*thetaa*( - c2 - 4199) - 274400*df(y1,t)**2*y5*betae*c1*phi*rho*thetaa + 274400*df(y1,t)**
+2*betae*c1*rho*thetaa*(c2 + 4199) + 19600*df(y1,t)*df(y3,t)*y1*y3*rho*thetaa*( - 7*betae - 7*betas - 1) + 
+19600*df(y1,t)*df(y3,t)*y1*y5*phi*rho*thetaa*( - 7*betae - 7*betas - 1) + 196*df(y1,t)*df(y3,t)*y1*rho*(700*
+betae*c2*thetaa + 2939321*betae*thetaa - 71*betae + 700*betas*c2*thetaa + 2939321*betas*thetaa - 50*betas + 
+100*c2*thetaa + 419903*thetaa - 3) - 9800*df(y1,t)*df(y3,t)*y3*y4*rho*thetaa*(betae + betas) + 9800*df(y1,t)*
+df(y3,t)*y3*c1*rho**2*thetaa*(betae + betas) - 9800*df(y1,t)*df(y3,t)*y4*y5*phi*rho*thetaa*(betae + betas) + 
+14*df(y1,t)*df(y3,t)*y4*rho*(700*betae*c2*thetaa + 2939321*betae*thetaa - 171*betae + 700*betas*c2*thetaa + 
+2939321*betas*thetaa + 50*betas) + 9800*df(y1,t)*df(y3,t)*y5*c1*phi*rho**2*thetaa*(betae + betas) + 14*df(y1,t
+)*df(y3,t)*c1*rho**2*( - 700*betae*c2*thetaa - 2939321*betae*thetaa + 171*betae - 700*betas*c2*thetaa - 
+2939321*betas*thetaa - 50*betas) + 9800*df(y1,t)*x6*y1*y3*betae*rho*thetaa + 9800*df(y1,t)*x6*y1*y5*betae*phi*
+rho*thetaa + 9800*df(y1,t)*x6*y1*betae*rho*thetaa*( - c2 - 4199) + 2100*df(y1,t)*x6*y3*y4*betae*rho*thetaa - 
+2100*df(y1,t)*x6*y3*betae*c1*rho**2*thetaa + 2100*df(y1,t)*x6*y4*y5*betae*phi*rho*thetaa + 2100*df(y1,t)*x6*y4
+*betae*rho*thetaa*( - c2 - 4199) - 2100*df(y1,t)*x6*y5*betae*c1*phi*rho**2*thetaa + 2100*df(y1,t)*x6*betae*c1*
+rho**2*thetaa*(c2 + 4199) + 137200*df(y1,t)*y1**2*y3*thetaa*(14*betae**2 - betae*rho + 3*betae + betas*rho) + 
+137200*df(y1,t)*y1**2*y5*phi*thetaa*(14*betae**2 - betae*rho + 3*betae + betas*rho) + 137200*df(y1,t)*y1**2*
+thetaa*( - 14*betae**2*c2 - 58786*betae**2 + betae*c2*rho - 3*betae*c2 + 4199*betae*rho - 12597*betae - betas*
+c2*rho - 4199*betas*rho) + 19600*df(y1,t)*y1*y3**2*rho*thetaa*( - 7*betae*nu - 7*betas*gammah - 7*betas*nu - 
+nu) + 9800*df(y1,t)*y1*y3*y4*thetaa*(28*betae**2 - betae*rho + betas*rho) + 19600*df(y1,t)*y1*y3*y5*phi*rho*
+thetaa*( - 7*betae*nu - 7*betas*gammah - 7*betas*nu - nu) + 196*df(y1,t)*y1*y3*rho*( - 1400*betae**2*c1*thetaa
+ + 50*betae*c1*rho*thetaa + 700*betae*c2*nu*thetaa + 21*betae*gammah*thetaa - 71*betae*gammah + 2939321*betae*
+nu*thetaa - 71*betae*nu - 50*betas*c1*rho*thetaa + 700*betas*c2*gammah*thetaa + 700*betas*c2*nu*thetaa + 
+2939321*betas*gammah*thetaa - 50*betas*gammah + 2939321*betas*nu*thetaa - 50*betas*nu + 100*c2*nu*thetaa + 3*
+gammah*thetaa - 3*gammah + 419903*nu*thetaa - 3*nu) + 9800*df(y1,t)*y1*y4*y5*phi*thetaa*(28*betae**2 - betae*
+rho + betas*rho) + 9800*df(y1,t)*y1*y4*thetaa*( - 28*betae**2*c2 - 117572*betae**2 + betae*c2*rho + 4199*betae
+*rho - betas*c2*rho - 4199*betas*rho) + 9800*df(y1,t)*y1*y5*c1*phi*rho*thetaa*( - 28*betae**2 + betae*rho - 
+betas*rho) + 9800*df(y1,t)*y1*c1*rho*thetaa*(28*betae**2*c2 + 117572*betae**2 - betae*c2*rho - 4199*betae*rho 
++ betas*c2*rho + 4199*betas*rho) - 9800*df(y1,t)*y3**2*y4*rho*thetaa*(betae*nu + betas*gammah + betas*nu) + 
+9800*df(y1,t)*y3**2*c1*rho**2*thetaa*(betae*nu + betas*gammah + betas*nu) + 700*df(y1,t)*y3*y4**2*betae*thetaa
+*(14*betae - 3) - 9800*df(y1,t)*y3*y4*y5*phi*rho*thetaa*(betae*nu + betas*gammah + betas*nu) + 14*df(y1,t)*y3*
+y4*rho*( - 1400*betae**2*c1*thetaa + 300*betae*c1*thetaa + 700*betae*c2*nu*thetaa + 21*betae*gammah*thetaa - 
+171*betae*gammah + 2939321*betae*nu*thetaa - 171*betae*nu + 700*betas*c2*gammah*thetaa + 700*betas*c2*nu*
+thetaa + 2939321*betas*gammah*thetaa + 50*betas*gammah + 2939321*betas*nu*thetaa + 50*betas*nu) + 9800*df(y1,t
+)*y3*y5*c1*phi*rho**2*thetaa*(betae*nu + betas*gammah + betas*nu) + 14*df(y1,t)*y3*c1*rho**2*(700*betae**2*c1*
+thetaa - 150*betae*c1*thetaa - 700*betae*c2*nu*thetaa - 21*betae*gammah*thetaa + 171*betae*gammah - 2939321*
+betae*nu*thetaa + 171*betae*nu - 700*betas*c2*gammah*thetaa - 700*betas*c2*nu*thetaa - 2939321*betas*gammah*
+thetaa - 50*betas*gammah - 2939321*betas*nu*thetaa - 50*betas*nu) + 700*df(y1,t)*y4**2*y5*betae*phi*thetaa*(14
+*betae - 3) + 700*df(y1,t)*y4**2*betae*thetaa*( - 14*betae*c2 - 58786*betae + 3*c2 + 12597) + 1400*df(y1,t)*y4
+*y5*betae*c1*phi*rho*thetaa*( - 14*betae + 3) + 1400*df(y1,t)*y4*betae*c1*rho*thetaa*(14*betae*c2 + 58786*
+betae - 3*c2 - 12597) + 700*df(y1,t)*y5*betae*c1**2*phi*rho**2*thetaa*(14*betae - 3) + 700*df(y1,t)*betae*c1**
+2*rho**2*thetaa*( - 14*betae*c2 - 58786*betae + 3*c2 + 12597) + 700*df(y3,t)*y1**2*y3*rho*thetaa*( - 196*betae
+*betas - 14*betae - 14*betas - 1) + 700*df(y3,t)*y1**2*y5*phi*rho*thetaa*( - 196*betae*betas - 14*betae - 14*
+betas - 1) + 7*df(y3,t)*y1**2*rho*(19600*betae*betas*c2*thetaa + 82300988*betae*betas*thetaa - 2800*betae*
+betas + 1400*betae*c2*thetaa + 5878642*betae*thetaa - 142*betae + 1400*betas*c2*thetaa + 5878642*betas*thetaa 
+- 100*betas + 100*c2*thetaa + 419903*thetaa - 3) + 700*df(y3,t)*y1*y3*y4*rho*thetaa*( - 28*betae*betas - betae
+ - betas) + 700*df(y3,t)*y1*y3*c1*rho**2*thetaa*(28*betae*betas + betae + betas) + 700*df(y3,t)*y1*y4*y5*phi*
+rho*thetaa*( - 28*betae*betas - betae - betas) + df(y3,t)*y1*y4*rho*(19600*betae*betas*c2*thetaa + 82300988*
+betae*betas*thetaa - 2800*betae*betas + 700*betae*c2*thetaa + 2939321*betae*thetaa - 121*betae + 700*betas*c2*
+thetaa + 2939321*betas*thetaa) + 700*df(y3,t)*y1*y5*c1*phi*rho**2*thetaa*(28*betae*betas + betae + betas) + df
+(y3,t)*y1*c1*rho**2*( - 19600*betae*betas*c2*thetaa - 82300988*betae*betas*thetaa + 2800*betae*betas - 700*
+betae*c2*thetaa - 2939321*betae*thetaa + 121*betae - 700*betas*c2*thetaa - 2939321*betas*thetaa) - 700*df(y3,t
+)*y3*y4**2*betae*betas*rho*thetaa + 1400*df(y3,t)*y3*y4*betae*betas*c1*rho**2*thetaa - 700*df(y3,t)*y3*betae*
+betas*c1**2*rho**3*thetaa - 700*df(y3,t)*y4**2*y5*betae*betas*phi*rho*thetaa + df(y3,t)*y4**2*betae*betas*rho*
+(700*c2*thetaa + 2939321*thetaa - 100) + 1400*df(y3,t)*y4*y5*betae*betas*c1*phi*rho**2*thetaa + 2*df(y3,t)*y4*
+betae*betas*c1*rho**2*( - 700*c2*thetaa - 2939321*thetaa + 100) - 700*df(y3,t)*y5*betae*betas*c1**2*phi*rho**3
+*thetaa + df(y3,t)*betae*betas*c1**2*rho**3*(700*c2*thetaa + 2939321*thetaa - 100) + 700*x6*y1**2*y3*betae*rho
+*thetaa + 700*x6*y1**2*y5*betae*phi*rho*thetaa + 700*x6*y1**2*betae*rho*thetaa*( - c2 - 4199) + 100*x6*y1*y3*
+y4*betae*rho*thetaa - 100*x6*y1*y3*betae*c1*rho**2*thetaa + 100*x6*y1*y4*y5*betae*phi*rho*thetaa + 100*x6*y1*
+y4*betae*rho*thetaa*( - c2 - 4199) - 100*x6*y1*y5*betae*c1*phi*rho**2*thetaa + 100*x6*y1*betae*c1*rho**2*
+thetaa*(c2 + 4199) + 9800*y1**3*y3*thetaa*( - 14*betae**2*rho + 42*betae**2 + 14*betae*betas*rho - betae*rho +
+ 2*betae + betas*rho) + 9800*y1**3*y5*phi*thetaa*( - 14*betae**2*rho + 42*betae**2 + 14*betae*betas*rho - 
+betae*rho + 2*betae + betas*rho) + 9800*y1**3*thetaa*(14*betae**2*c2*rho - 42*betae**2*c2 + 58786*betae**2*rho
+ - 176358*betae**2 - 14*betae*betas*c2*rho - 58786*betae*betas*rho + betae*c2*rho - 2*betae*c2 + 4199*betae*
+rho - 8398*betae - betas*c2*rho - 4199*betas*rho) + 700*y1**2*y3**2*rho*thetaa*( - 196*betae*betas*gammah - 
+196*betae*betas*nu - 14*betae*nu - 14*betas*gammah - 14*betas*nu - nu) + 700*y1**2*y3*y4*thetaa*( - 28*betae**
+2*rho + 84*betae**2 + 28*betae*betas*rho - betae*rho + betas*rho) + 700*y1**2*y3*y5*phi*rho*thetaa*( - 196*
+betae*betas*gammah - 196*betae*betas*nu - 14*betae*nu - 14*betas*gammah - 14*betas*nu - nu) + 7*y1**2*y3*rho*(
+2800*betae**2*c1*rho*thetaa - 8400*betae**2*c1*thetaa - 2800*betae*betas*c1*rho*thetaa + 19600*betae*betas*c2*
+gammah*thetaa + 19600*betae*betas*c2*nu*thetaa + 82300988*betae*betas*gammah*thetaa - 2800*betae*betas*gammah 
++ 82300988*betae*betas*nu*thetaa - 2800*betae*betas*nu + 100*betae*c1*rho*thetaa + 1400*betae*c2*nu*thetaa + 
+42*betae*gammah*thetaa - 142*betae*gammah + 5878642*betae*nu*thetaa - 142*betae*nu - 100*betas*c1*rho*thetaa +
+ 1400*betas*c2*gammah*thetaa + 1400*betas*c2*nu*thetaa + 5878642*betas*gammah*thetaa - 100*betas*gammah + 
+5878642*betas*nu*thetaa - 100*betas*nu + 100*c2*nu*thetaa + 3*gammah*thetaa - 3*gammah + 419903*nu*thetaa - 3*
+nu) + 700*y1**2*y4*y5*phi*thetaa*( - 28*betae**2*rho + 84*betae**2 + 28*betae*betas*rho - betae*rho + betas*
+rho) + 700*y1**2*y4*thetaa*(28*betae**2*c2*rho - 84*betae**2*c2 + 117572*betae**2*rho - 352716*betae**2 - 28*
+betae*betas*c2*rho - 117572*betae*betas*rho + betae*c2*rho + 4199*betae*rho - betas*c2*rho - 4199*betas*rho) +
+ 700*y1**2*y5*c1*phi*rho*thetaa*(28*betae**2*rho - 84*betae**2 - 28*betae*betas*rho + betae*rho - betas*rho) +
+ 700*y1**2*c1*rho*thetaa*( - 28*betae**2*c2*rho + 84*betae**2*c2 - 117572*betae**2*rho + 352716*betae**2 + 28*
+betae*betas*c2*rho + 117572*betae*betas*rho - betae*c2*rho - 4199*betae*rho + betas*c2*rho + 4199*betas*rho) +
+ 700*y1*y3**2*y4*rho*thetaa*( - 28*betae*betas*gammah - 28*betae*betas*nu - betae*nu - betas*gammah - betas*nu
+) + 700*y1*y3**2*c1*rho**2*thetaa*(28*betae*betas*gammah + 28*betae*betas*nu + betae*nu + betas*gammah + betas
+*nu) + 100*y1*y3*y4**2*betae*thetaa*( - 7*betae*rho + 21*betae + 7*betas*rho - 1) + 700*y1*y3*y4*y5*phi*rho*
+thetaa*( - 28*betae*betas*gammah - 28*betae*betas*nu - betae*nu - betas*gammah - betas*nu) + y1*y3*y4*rho*(
+1400*betae**2*c1*rho*thetaa - 4200*betae**2*c1*thetaa - 1400*betae*betas*c1*rho*thetaa + 19600*betae*betas*c2*
+gammah*thetaa + 19600*betae*betas*c2*nu*thetaa + 82300988*betae*betas*gammah*thetaa - 2800*betae*betas*gammah 
++ 82300988*betae*betas*nu*thetaa - 2800*betae*betas*nu + 200*betae*c1*thetaa + 700*betae*c2*nu*thetaa + 21*
+betae*gammah*thetaa - 121*betae*gammah + 2939321*betae*nu*thetaa - 121*betae*nu + 700*betas*c2*gammah*thetaa +
+ 700*betas*c2*nu*thetaa + 2939321*betas*gammah*thetaa + 2939321*betas*nu*thetaa) + 700*y1*y3*y5*c1*phi*rho**2*
+thetaa*(28*betae*betas*gammah + 28*betae*betas*nu + betae*nu + betas*gammah + betas*nu) + y1*y3*c1*rho**2*( - 
+700*betae**2*c1*rho*thetaa + 2100*betae**2*c1*thetaa + 700*betae*betas*c1*rho*thetaa - 19600*betae*betas*c2*
+gammah*thetaa - 19600*betae*betas*c2*nu*thetaa - 82300988*betae*betas*gammah*thetaa + 2800*betae*betas*gammah 
+- 82300988*betae*betas*nu*thetaa + 2800*betae*betas*nu - 100*betae*c1*thetaa - 700*betae*c2*nu*thetaa - 21*
+betae*gammah*thetaa + 121*betae*gammah - 2939321*betae*nu*thetaa + 121*betae*nu - 700*betas*c2*gammah*thetaa -
+ 700*betas*c2*nu*thetaa - 2939321*betas*gammah*thetaa - 2939321*betas*nu*thetaa) + 100*y1*y4**2*y5*betae*phi*
+thetaa*( - 7*betae*rho + 21*betae + 7*betas*rho - 1) + 100*y1*y4**2*betae*thetaa*(7*betae*c2*rho - 21*betae*c2
+ + 29393*betae*rho - 88179*betae - 7*betas*c2*rho - 29393*betas*rho + c2 + 4199) + 200*y1*y4*y5*betae*c1*phi*
+rho*thetaa*(7*betae*rho - 21*betae - 7*betas*rho + 1) + 200*y1*y4*betae*c1*rho*thetaa*( - 7*betae*c2*rho + 21*
+betae*c2 - 29393*betae*rho + 88179*betae + 7*betas*c2*rho + 29393*betas*rho - c2 - 4199) + 100*y1*y5*betae*c1
+**2*phi*rho**2*thetaa*( - 7*betae*rho + 21*betae + 7*betas*rho - 1) + 100*y1*betae*c1**2*rho**2*thetaa*(7*
+betae*c2*rho - 21*betae*c2 + 29393*betae*rho - 88179*betae - 7*betas*c2*rho - 29393*betas*rho + c2 + 4199) - 
+700*y3**2*y4**2*betae*betas*rho*thetaa*(gammah + nu) + 1400*y3**2*y4*betae*betas*c1*rho**2*thetaa*(gammah + nu
+) - 700*y3**2*betae*betas*c1**2*rho**3*thetaa*(gammah + nu) - 700*y3*y4**2*y5*betae*betas*phi*rho*thetaa*(
+gammah + nu) + y3*y4**2*betae*betas*rho*(700*c2*gammah*thetaa + 700*c2*nu*thetaa + 2939321*gammah*thetaa - 100
+*gammah + 2939321*nu*thetaa - 100*nu) + 1400*y3*y4*y5*betae*betas*c1*phi*rho**2*thetaa*(gammah + nu) + 2*y3*y4
+*betae*betas*c1*rho**2*( - 700*c2*gammah*thetaa - 700*c2*nu*thetaa - 2939321*gammah*thetaa + 100*gammah - 
+2939321*nu*thetaa + 100*nu) - 700*y3*y5*betae*betas*c1**2*phi*rho**3*thetaa*(gammah + nu) + y3*betae*betas*c1
+**2*rho**3*(700*c2*gammah*thetaa + 700*c2*nu*thetaa + 2939321*gammah*thetaa - 100*gammah + 2939321*nu*thetaa -
+ 100*nu)
+
+
+aa_(11) :=  - int_y1 + y4
+
+
+aa_(12) :=  - int_y3 + y5
+
+
+MODEL ALGEBRAICALLY OBSERVABLE
+
+
+PARAMETER VALUES
+
+
+b2_ := {betae=2,betas=3,gammah=5,nu=7,phi=11,thetaa=13,rho=17,c1=19,c2=23}
+
+
+MODEL PARAMETER SOLUTION(S)
+
+
+g_ := {{betae=2,betas=3,c1=19,c2=23,gammah=5,nu=7,phi=11,rho=17,thetaa=13}}
+
+
+MODEL GLOBALLY IDENTIFIABLE
+
+
+INITIAL CONDITION(S) WERE NOT NECESSARY
+
+
+3: 
