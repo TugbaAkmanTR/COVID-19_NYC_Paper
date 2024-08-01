@@ -1,3 +1,20 @@
+#
+# Source:
+#
+#@misc{cite1,
+#  author = "Alexander Demin",
+#  date = "2024-05-27",
+#  howpublished = "personal communication"
+#}
+
+#@Online{cite2,
+# author = {Pogudin, Gleb},
+# year = {2024},
+# title = {Speeding things up via linear first integrals},
+# url = {https://github.com/SciML/StructuralIdentifiability.jl/issues/63},
+# urldate = {2020-07-01}
+#}
+
 using StructuralIdentifiability
 
 # Original model
