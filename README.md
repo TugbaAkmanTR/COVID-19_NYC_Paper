@@ -1,6 +1,6 @@
 A computational model to optimize the increment in hospital beds in case of non-availability: a case study with the data of New York City for early dynamics of COVID-19 and its extension
 
-Codes and data to reproduce the results and figures in the preprint. In each folder, the file main_X.m must be run.
+Codes and data to reproduce the results and figures in the manuscript. In each folder, the file main_X.m must be run.
 
 Author list: Tuğba Akman
 
